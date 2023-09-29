@@ -1,0 +1,133 @@
+@use "sass:math";
+@import "/src/scss/function.scss";
+
+// ...............................ФУНКЦИЯ АДАПТИВ...................................
+$maxWidth: 1920;
+$maxWidthContainer: 1500;
+
+.form {
+   display: flex;
+   flex-direction: column;
+}
+
+.title {
+   text-align: center;
+   color: orange;
+   font-weight: 700;
+   font-size: rem(24);
+   margin-bottom: rem(15);
+   @media (min-width: 1920.98px) {
+      font-size: rem(45);
+      margin-bottom: rem(25);
+   }
+}
+
+.registration {
+   text-align: center;
+   color: orange;
+   margin-top: rem(20);
+   cursor: pointer;
+   transition: 0.3s all ease 0s;
+   &:hover {
+      font-weight: 700;
+      transition: 0.3s all ease 0s;
+   }
+}
+
+.myBtn {
+   margin-top: rem(20);
+   padding: rem(10) rem(40);
+   background-color: orange;
+   color: white;
+   font-size: rem(16);
+   cursor: pointer;
+   font-weight: 700;
+   transition: 0.3s all ease;
+   border: rem(3) solid orange;
+   &:hover {
+      background-color: transparent;
+      transition: 0.3s all ease;
+   }
+}
+
+.noActive {
+   margin-top: rem(20);
+   cursor: none;
+   padding: rem(10) rem(40);
+   background-color: orange;
+   color: white;
+   font-size: rem(16);
+   cursor: none;
+   font-weight: 700;
+   transition: 0.3s all ease;
+   border: rem(3) solid orange;
+   opacity: 0.3;
+   border-radius: rem(20);
+}
+.inputItem {
+   display: flex;
+   align-items: center;
+   position: relative;
+   width: 100%;
+}
+
+.myInput {
+   padding: rem(10) rem(15);
+   background-color: transparent;
+   border: rem(2) solid orange;
+   color: white;
+   font-size: 16px;
+   margin: rem(5) 0;
+   width: rem(400);
+   border-radius: rem(20);
+   transition: 0.2s border ease;
+   @media (max-width: 450px) {
+      width: rem(300);
+   }
+   @media (max-width: 350px) {
+      width: rem(250);
+   }
+   @media (min-width: 1920.98px) {
+      width: rem(600);
+      padding: rem(20) rem(25);
+      margin: rem(10) 0;
+      font-size: rem(24);
+   }
+   &:focus {
+      border: rem(4) solid orange;
+      transition: 0.2s border ease;
+   }
+}
+
+.myInpError {
+   padding: rem(10) rem(15);
+   background-color: transparent;
+   border: rem(2) solid rgb(245, 8, 8);
+   color: white;
+   font-size: rem(16);
+   margin: rem(5) 0;
+   width: rem(400);
+   border-radius: rem(20);
+   transition: 0.2s border ease;
+   @media (max-width: 450px) {
+      width: rem(300);
+   }
+   @media (max-width: 350px) {
+      width: rem(250);
+   }
+}
+.check {
+   display: flex;
+   align-items: center;
+   gap: rem(10);
+   margin-top: rem(5);
+   margin-bottom: rem(15);
+   color: orange;
+}
+
+.ok {
+   position: absolute;
+   top: rem(18);
+   right: rem(15);
+   width: rem(40);
+}

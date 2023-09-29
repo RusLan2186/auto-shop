@@ -1,0 +1,70 @@
+@use "sass:math";
+@import "/src/scss/function.scss";
+
+$maxWidth: 1920;
+$maxWidthContainer: 1500;
+
+.myModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   transition: 0.4s all;
+   background: rgba(63, 59, 59, 0.8);
+   pointer-events: none;
+   z-index: 110;
+}
+
+.myModal.active {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.myModalContent {
+   margin: 0 rem(15);
+   padding: rem(25);
+   background-color: rgb(2, 2, 2);
+   border-radius: rem(16);
+   min-width: rem(250);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transform: scale(0.5);
+   transition: 0.4s;
+   position: relative;
+   border: rem(3) solid orange;
+   z-index: 110;
+   &.active {
+      transform: scale(1);
+   }
+   @media (min-width: 1920.98px) {
+      min-width: rem(800);
+      min-height: rem(500);
+   }
+}
+
+.close {
+   text-decoration: line-through;
+   color: orange;
+}
+.modalError {
+   color: orange;
+   position: absolute;
+   top: rem(-50);
+   right: rem(-10);
+   font-size: rem(35);
+   cursor: pointer;
+   transition: 0.3s all ease 0s;
+   z-index: 100;
+   width: rem(50);
+   text-align: center;
+   &:hover {
+      color: red;
+      transition: 0.3s all ease 0s;
+   }
+}

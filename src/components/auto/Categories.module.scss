@@ -1,0 +1,73 @@
+@use "sass:math";
+@import "/src/scss/function.scss";
+
+.list {
+   display: flex;
+   column-gap: rem(30);
+   justify-content: center;
+   margin-bottom: rem(50);
+   font-size: rem(20);
+   text-transform: capitalize;
+   color: orange;
+   row-gap: rem(20);
+   flex-wrap: wrap;
+   @media (max-width: 767.98px) {
+      display: none;
+   }
+
+   & li {
+      border: rem(3) solid orange;
+      padding: rem(10) rem(5);
+      border-radius: rem(16);
+      transition: 0.3s all ease 0s;
+      width: rem(150);
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+         background-color: orange;
+         color: white;
+         transition: 0.3s all ease 0s;
+      }
+   }
+}
+
+.active__list {
+   display: flex;
+   row-gap: rem(10);
+   flex-direction: column;
+   text-transform: capitalize;
+   margin-bottom: rem(10);
+   font-size: rem(18);
+   & li {
+      border: rem(3) solid orange;
+      padding: rem(10) rem(5);
+      border-radius: rem(16);
+      text-align: center;
+   }
+}
+
+.active {
+   background-color: orange;
+   border: rem(3) solid rgb(255, 255, 255);
+   color: white;
+   transition: 0.3s all ease 0s;
+   @media (max-width: 767.98px) {
+      background-color: transparent;
+      border: none;
+   }
+}
+
+.title {
+   margin-bottom: rem(20);
+   font-size: rem(20);
+
+   & span {
+      color: orange;
+      text-transform: capitalize;
+      display: inline-block;
+      margin-left: rem(10);
+   }
+   @media (min-width: 767.98px) {
+      display: none;
+   }
+}

@@ -1,0 +1,20 @@
+@use "sass:math";
+@import "/src/scss/function.scss";
+
+.loader {
+   width: rem(100);
+   height: rem(100);
+   border-radius: 50%;
+   border: rem(3) dashed orange;
+   margin-top: rem(50);
+   animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+   0% {
+      transform: rotate(0deg) scale(1);
+   }
+   100% {
+      transform: rotate(360deg) scale(1.4);
+   }
+}
