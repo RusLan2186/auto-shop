@@ -8,8 +8,25 @@ import {
   formPostTitle,
 } from './postConstans';
 import cl from '../header/FormHeader.module.scss';
+import { AddPostType, PostsList } from './PostsList';
 
-const PostsForm = ({
+interface PostFormProps{
+  post:AddPostType;
+  changePost:(post:AddPostType) =>void;
+  error:string;
+  changePosts:(posts:PostsList[]) =>void;
+  posts:PostsList[];
+  modal:boolean;
+  changeModal:(modal:boolean) =>void;
+  changeError:(error:string) => void;
+  changeTitleError:(titleError:string) =>void;
+  titleError:string;
+  bodyError:string;
+  changeBodyError:(bodyError:string) =>void;
+
+}
+
+const PostsForm:React.FC<PostFormProps> = ({
   post,
   changePost,
   error,
@@ -23,10 +40,10 @@ const PostsForm = ({
   bodyError,
   changeBodyError,
 }) => {
-  const [titleDirty, setTitleDirty] = useState(false);
-  const [bodyDirty, setBodyDirty] = useState(false);
+  const [titleDirty, setTitleDirty] = useState<boolean>(false);
+  const [bodyDirty, setBodyDirty] = useState<boolean>(false);
 
-  const blurHundler = (e) => {
+  const blurHundler = (e:React.FocusEvent<HTMLTextAreaElement | HTMLInputElement >) => {
     switch (e.target.name) {
       case 'title':
         setTitleDirty(true);
@@ -37,7 +54,7 @@ const PostsForm = ({
     }
   };
 
-  const titleHundler = (e) => {
+  const titleHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
     changePost({ ...post, title: e.target.value });
     if (e.target.value.length < 3) {
       changeTitleError(messageTitleError);
@@ -45,7 +62,7 @@ const PostsForm = ({
       changeTitleError('');
     }
   };
-  const bodyHundler = (e) => {
+  const bodyHundler = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     changePost({ ...post, body: e.target.value });
     if (e.target.value.length < 5) {
       changeBodyError(messageBodyError);
@@ -60,7 +77,7 @@ const PostsForm = ({
     }
   }, [post.title, post.body, titleError]);
 
-  const addPost = (e) => {
+  const addPost = (e:React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (post.title.length >= 3 && post.body.length >= 5) {
       changePosts([...posts, { ...post, id: Date.now() }]);

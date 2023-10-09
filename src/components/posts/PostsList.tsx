@@ -21,7 +21,7 @@ export interface PostsList{
 }
 
 
-type AddPostType = Pick <PostsList, 'title' | "body">
+export type AddPostType = Pick <PostsList, 'title' | "body">
 
   const PostsList:React.FC <postTitleProps> = ({ postTitle }) => {
 
