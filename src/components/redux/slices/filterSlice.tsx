@@ -1,4 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+
+export type SortType ={
+  title:string;
+  sortProperty:string;
+}
+
+export interface SortCars{
+  categiriesId:number;
+  sort:SortType;
+
+}
 
 const initialState = {
   categiriesId: 0,
@@ -12,13 +24,13 @@ const filterSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setCotegoryId(state, action) {
+    setCotegoryId(state, action:PayloadAction<number>) {
       state.categiriesId = action.payload;
     },
-    setSortAuto(state, action) {
+    setSortAuto(state, action:PayloadAction<string>) {
       state.sort.title = action.payload;
     },
-    setSortProperty(state, action) {
+    setSortProperty(state, action:PayloadAction<string>) {
       state.sort.sortProperty = action.payload;
     },
   },
