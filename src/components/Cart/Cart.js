@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import smile from '../img/Cart/smile.png';
+import smile from './smile.png';
 import cl from './Cart.module.scss';
 import { addCar, clearCart, deleteCar, incremet } from '../redux/slices/cartSlice';
 import { v4 as uuidv4 } from 'uuid';

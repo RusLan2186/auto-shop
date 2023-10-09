@@ -1,5 +1,5 @@
-import enterImage from '../img/header/enter.png'
-import okImage from '../img/header/ok.png'
+import enterImage from './enter.png'
+import okImage from './ok.png'
 
 
 
