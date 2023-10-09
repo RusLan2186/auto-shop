@@ -2,7 +2,14 @@
 
 import cl from '../Modal/MyModal.module.scss'
 
-const HeaderModal = ({ children, visible, changeVisible }) => {
+interface HeaderModalProps{
+   visible:boolean;
+   children:React.ReactChild | React.ReactNode;
+   changeVisible:(visible:boolean) =>void;
+
+}
+
+const HeaderModal:React.FC<HeaderModalProps> = ({ children, visible, changeVisible }) => {
 
    const rootClasses = [cl.myModal]
    if (visible) {
