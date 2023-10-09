@@ -2,10 +2,7 @@ import cl from './FormHeader.module.scss'
 import { useEffect, useState, useRef } from 'react'
 import { emailMessageError, passwordMessageError, incorrectEmail, incorrectPass, enterProfileTitle, enter, okImg } from './headerConstants'
 
-interface ReferingPass {
-   showPass:string
-  setShowPass: HTMLInputElement
-}
+
 
 interface FormHeaderProps{
    openModal:boolean
@@ -24,8 +21,8 @@ const FormHeader:React.FC<FormHeaderProps> = ({ openModal }) => {
    const [mailOk, setMailOk] = useState<string>('')
    const [check, setCheck] = useState<boolean>(false)
 
-   // const passREf = useRef<HTMLInputElement>(showPass);
-   const passREf = useRef<ReferingPass>(null);
+   const passREf = useRef<HTMLInputElement>(showPass);
+
 
 
    const showPassword = (e:React.MouseEvent<HTMLInputElement>) => {
