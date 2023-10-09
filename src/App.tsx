@@ -9,8 +9,7 @@ const App:React.FC = () => {
   return (
     <div className='wrapper'>
       <Header />
-
-      <div>
+  <div>
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/cart' element={<Cart />} />
