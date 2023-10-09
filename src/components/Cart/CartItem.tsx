@@ -1,11 +1,16 @@
 import React from 'react';
 import cl from './Cart.module.scss';
-import { useDispatch } from 'react-redux';
-import { deleteCar, minusCar, plusCar } from '../redux/slices/cartSlice';
+import { ItemsType, deleteCar, minusCar, plusCar } from '../redux/slices/cartSlice';
 import { useState } from 'react';
+import { useAppDispatch } from '../redux/store';
 
-const CartItem = ({ id, auto }) => {
-  const dispatch = useDispatch();
+interface CartItemProps{
+
+  auto:ItemsType;
+}
+
+const CartItem:React.FC<CartItemProps> = ({  auto }) => {
+  const dispatch = useAppDispatch();
   const [disable, setDisable] = useState(false);
 
   const removeAuto = () => {
@@ -20,10 +25,7 @@ const CartItem = ({ id, auto }) => {
     dispatch(minusCar(auto.id));
   };
 
-  // if ((auto.count = 1)) {
-  //   setDisable(true);
-  //   console.log(disable);
-  // }
+
 
   return (
     <div className={cl.cartItemWContainer}>
