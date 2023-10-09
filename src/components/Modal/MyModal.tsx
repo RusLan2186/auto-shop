@@ -1,9 +1,15 @@
 
 import cl from './MyModal.module.scss';
 
+interface MyModalProps{
+   visible:boolean;
+   children:React.ReactChild | React.ReactNode;
+   changeVisible:(visible:boolean) =>void;
+}
 
 
-const MyModal = ({ children, visible, changeVisible }) => {
+const MyModal:React.FC<MyModalProps> = ({ children, visible, changeVisible }) => {
+
 
    const rootClasses = [cl.myModal]
    if (visible) {

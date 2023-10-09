@@ -6,7 +6,6 @@ interface HeaderModalProps{
    visible:boolean;
    children:React.ReactChild | React.ReactNode;
    changeVisible:(visible:boolean) =>void;
-
 }
 
 const HeaderModal:React.FC<HeaderModalProps> = ({ children, visible, changeVisible }) => {
