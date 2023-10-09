@@ -1,28 +1,36 @@
-
 import cl from './FormHeader.module.scss'
 import { useEffect, useState, useRef } from 'react'
 import { emailMessageError, passwordMessageError, incorrectEmail, incorrectPass, passMismatch, showPassLabel, enterProfileTitle, userNameErrorMesssage, reg, userNumberMessageError, okImg } from './headerConstants'
 
-const RegistrationForm = ({ regModal }) => {
+interface RegistrationFormProps{
+   regModal:boolean;
+}
+type TypeString= Record <string, string>
+type TypeBoolean= {
+   emailD: boolean, 
+   passwordD: boolean,
+    repeatPassD: boolean,
+     userNameD: boolean, 
+     userNumberD: boolean
+}
 
-   const [info, setInfo] = useState({ email: '', password: '', repeatPass: '', userName: '', userNumber: '' })
-   const [dirty, setDirty] = useState({ emailD: 'false', passwordD: 'false', repeatPassD: 'false', userNameD: 'false', userNumberD: 'false' })
-   const [error, setError] = useState({ emailError: '', passwordError: '', repeatPassError: '', userNameError: '', userNumberError: '' })
 
-   const [formValid, setFormValid] = useState(false)
+const RegistrationForm:React.FC<RegistrationFormProps> = ({ regModal }) => {
 
-   const [ok, setOk] = useState({ emailOk: '', passOk: '', repeatPassOk: '', userNameOk: '', userNumberOk: '' })
+   const [info, setInfo] = useState<TypeString>({ email: '', password: '', repeatPass: '', userName: '', userNumber: '' })
+   const [dirty, setDirty] = useState<TypeBoolean>({ emailD: false, passwordD: false, repeatPassD: false, userNameD: false, userNumberD: false })
+   const [error, setError] = useState<TypeString>({ emailError: '', passwordError: '', repeatPassError: '', userNameError: '', userNumberError: '' })
+const [formValid, setFormValid] = useState<boolean>(false)
+   const [ok, setOk] = useState<TypeString>({ emailOk: '', passOk: '', repeatPassOk: '', userNameOk: '', userNumberOk: '' })
+   const [showPass, setShowPass] = useState<any>('password')
+   const [showRepeatPass, setShowRepeatPass] = useState<any>('password')
 
-   const [showPass, setShowPass] = useState('password')
-   const [showRepeatPass, setShowRepeatPass] = useState('password')
+   const passREf = useRef<HTMLInputElement>(showPass);
+   const RepeatPassREf = useRef<HTMLInputElement>(showRepeatPass);
+const [check, setCheck] = useState<boolean>(false)
+   const [checkRepeat, setCheckRepeat] = useState<boolean>(false)
 
-   const passREf = useRef(showPass);
-   const RepeatPassREf = useRef(showRepeatPass);
-
-const [check, setCheck] = useState(false)
-   const [checkRepeat, setCheckRepeat] = useState(false)
-
-   const showPassword = () => {
+   const showPassword = (e:React.MouseEvent<HTMLInputElement>) => {
       if (showPass === 'password') {
          setShowPass(passREf.current.type = 'text')
 
@@ -32,7 +40,7 @@ const [check, setCheck] = useState(false)
 
       }
    }
-   const showRepeatPassword = () => {
+   const showRepeatPassword = (e:React.MouseEvent<HTMLInputElement>) => {
       if (showRepeatPass === 'password') {
          setShowRepeatPass(RepeatPassREf.current.type = 'text')
 
@@ -43,7 +51,7 @@ const [check, setCheck] = useState(false)
       }
    }
 
-const blurHandler = (e) => {
+const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
       switch (e.target.name) {
          case 'email':
             setDirty({ ...dirty, emailD: true })
@@ -63,7 +71,7 @@ const blurHandler = (e) => {
       }
    }
 
-   const emailHundler = (e) => {
+   const emailHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, email: e.target.value })
       const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!re.test(String(e.target.value).toLowerCase())) {
@@ -77,7 +85,7 @@ const blurHandler = (e) => {
       }
    }
 
-   const passwordHundler = (e) => {
+   const passwordHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, password: e.target.value })
       if (e.target.value.length < 5) {
          setError({ ...error, passwordError: incorrectPass })
@@ -92,7 +100,7 @@ const blurHandler = (e) => {
    }
 
 
-   const repeatPassHundler = (e) => {
+   const repeatPassHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, repeatPass: e.target.value })
       if (e.target.value !== passREf.current.value) {
          setError({ ...error, repeatPassError: passMismatch })
@@ -107,7 +115,7 @@ const blurHandler = (e) => {
 
    }
 
-   const userNameHundler = (e) => {
+   const userNameHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, userName: e.target.value })
       if (e.target.value.length < 2) {
          setError({ ...error, userNameError: userNameErrorMesssage })
@@ -118,7 +126,7 @@ const blurHandler = (e) => {
       }
    }
 
-   const userNumberHundler = (e) => {
+   const userNumberHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, userNumber: e.target.value })
       const numb = /[0-9, +]/;
       if (!numb.test(e.target.value) || e.target.value.length < 12) {
