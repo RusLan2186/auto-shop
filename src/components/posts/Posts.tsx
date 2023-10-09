@@ -3,7 +3,7 @@ import PostsList from "./PostsList"
 
 
 
-const Posts = () => {
+const Posts:React.FC = () => {
    return (
       <div>
          <PostsList postTitle={'Comments'} />

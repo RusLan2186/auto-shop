@@ -1,5 +1,6 @@
 import PostsItem from './PostsItem';
 import { useState, useMemo } from 'react';
+//@ts-ignore
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import UiInput from '../auto/UI/Input/UiInput';
 import UiButton from '../auto/UI/Button/UiButton';
@@ -7,31 +8,48 @@ import MyModal from '../Modal/MyModal';
 import MySelect from '../auto/UI/Select/MySelect';
 import PostsForm from './PostsForm';
 import { addPost, notFound, sortedBy } from './postConstans';
-import { useDispatch, useSelector } from 'react-redux';
 
-const PostsList = ({ postTitle }) => {
-  const [posts, setPosts] = useState([{ id: 1, title: 'Anna', body: 'I like your shop' }]);
 
-  const [post, setPost] = useState({ title: '', body: '' });
-  const [modal, setModal] = useState(false);
-  const [sortedPost, setSortePost] = useState('');
-  const [searchPost, setSearchPost] = useState('');
-  const [error, setError] = useState('');
-  const [titleError, setTitleError] = useState('');
-  const [bodyError, setBodyError] = useState('');
+interface postTitleProps{
+  postTitle:string;
+}
 
-  const deleteUser = (user) => {
+interface PostsList{
+  id:number;
+  title:string;
+  body:string;
+}
+
+
+type AddPostType = Pick <PostsList, 'title' | "body">
+
+  const PostsList:React.FC <postTitleProps> = ({ postTitle }) => {
+
+  const [posts, setPosts] = useState<PostsList[]>([{ id: 1, title: 'Elena', body: 'I like your shop' }]);
+ const [post, setPost] = useState<AddPostType>({ title: '', body: '' });
+  const [modal, setModal] = useState<boolean>(false);
+  const [sortedPost, setSortedPost] = useState<string>('');
+  const [searchPost, setSearchPost] = useState<string>('');
+  const [error, setError] = useState<string>('');
+  const [titleError, setTitleError] = useState<string>('');
+  const [bodyError, setBodyError] = useState<string>('');
+
+
+  const deleteUser = (user:PostsList) => {
     setPosts(posts.filter((p) => p.id !== user.id));
   };
 
   const postSort = useMemo(() => {
     if (sortedPost) {
-      return [...posts].sort((a, b) => a[sortedPost].localeCompare(b[sortedPost]));
-    }
-    return posts;
-  }, [sortedPost, posts]);
+// @ts-ignore
+   return [...posts].sort((a, b) => a[sortedPost].localeCompare(b[sortedPost])
+);
+  }    return posts;
 
-  const portedandSearchPost = useMemo(() => {
+    }, [sortedPost, posts]);
+  
+
+  const sortedandSearchPost = useMemo(() => {
     return postSort.filter(
       (post) =>
         post.title.toLowerCase().includes(searchPost.toLowerCase()) ||
@@ -39,8 +57,8 @@ const PostsList = ({ postTitle }) => {
     );
   }, [searchPost, postSort]);
 
-  const sortPost = (sort) => {
-    setSortePost(sort);
+  const sortPost = (sort:string) => {
+    setSortedPost(sort);
   };
 
   const clickPostSearchClear = () => {
@@ -72,7 +90,7 @@ const PostsList = ({ postTitle }) => {
           </span>
           <UiInput
             value={searchPost}
-            onChange={(e) => setSearchPost(e.target.value)}
+           onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchPost(e.target.value)}
             placeholder='Search...'
           ></UiInput>
         </div>
@@ -83,7 +101,7 @@ const PostsList = ({ postTitle }) => {
         </span>
         <UiInput
           value={searchPost}
-          onChange={(e) => setSearchPost(e.target.value)}
+       onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchPost(e.target.value)}
           placeholder='Search...'
         ></UiInput>
       </div>
@@ -91,11 +109,7 @@ const PostsList = ({ postTitle }) => {
       <MyModal
         visible={modal}
         changeVisible={setModal}
-        changeError={setError}
-        changePost={setPost}
-        changeTitleError={setTitleError}
-        changeBodyError={setBodyError}
-      >
+   >
         <PostsForm
           post={post}
           changePost={setPost}
@@ -112,10 +126,10 @@ const PostsList = ({ postTitle }) => {
         />
       </MyModal>
 
-      {portedandSearchPost.length !== 0 ? (
+      {sortedandSearchPost.length !== 0 ? (
         <div>
           <TransitionGroup>
-            {posts.map((post, index) => (
+            {sortedandSearchPost.map((post, index) => (
               <CSSTransition key={post.id} timeout={500} classNames='post'>
                 <PostsItem
                   postItem={post}
