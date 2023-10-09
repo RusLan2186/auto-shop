@@ -5,10 +5,24 @@ import MyModal from "../Modal/MyModal"
 import PostsEditForm from './PostsEditForm'
 import { editPostImage, deletePostImage } from './postConstans'
 import Counter from '../counter/Counter'
+import { PostsList } from './PostsList'
+
+interface PostsItemProps{
+   number:number;
+   postItem:PostsList;
+   postsList1:PostsList[];
+   titleError:string;
+   bodyError:string;
+   changeBodyError:(bodyError:string) =>void;
+   changeTitleError:(titleError:string) =>void;
+   setPostsItem:(posts:PostsList[]) =>void;
+   remove:(user:PostsList) => void; 
+ 
 
 
+}
 
-const PostsItem = ({ postItem, number, remove, postsItem, setPostsItem, changePost, changeError, titleError, changeTitleError, bodyError, changeBodyError }) => {
+const PostsItem:React.FC<PostsItemProps> = ({ postItem, number, remove, postsList1, setPostsItem,  titleError, changeTitleError, bodyError, changeBodyError }) => {
 
    const [openMyModal, setOpenMyModal] = useState(false)
 
@@ -30,8 +44,8 @@ const PostsItem = ({ postItem, number, remove, postsItem, setPostsItem, changePo
          <div className="posts__item_counter">
             <Counter />
          </div >
-         {<MyModal visible={openMyModal} changeVisible={setOpenMyModal} changePost={changePost} changeError={changeError} changeTitleError={changeTitleError} changeBodyError={changeBodyError}>
-            <PostsEditForm postItem={postItem} changePostItem={setPostsItem} changeOpenModal={setOpenMyModal} postsItem={postsItem} valueTitleError={titleError} setValueTitleError={changeTitleError} valueBodyError={bodyError} setValueBodyError={changeBodyError} />
+         {<MyModal visible={openMyModal} changeVisible={setOpenMyModal}>
+            <PostsEditForm postItem={postItem} changePostItem={setPostsItem} changeOpenModal={setOpenMyModal} postsItem={postsList1} valueTitleError={titleError} setValueTitleError={changeTitleError} valueBodyError={bodyError} setValueBodyError={changeBodyError} />
          </MyModal>}
       </div>
    )

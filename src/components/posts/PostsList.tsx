@@ -14,7 +14,7 @@ interface postTitleProps{
   postTitle:string;
 }
 
-interface PostsList{
+export interface PostsList{
   id:number;
   title:string;
   body:string;
@@ -135,11 +135,9 @@ type AddPostType = Pick <PostsList, 'title' | "body">
                   postItem={post}
                   number={index + 1}
                   remove={deleteUser}
-                  postsItem={posts}
+                  postsList1={posts}
                   setPostsItem={setPosts}
-                  changeError={setError}
-                  changePost={setPost}
-                  titleError={titleError}
+                 titleError={titleError}
                   changeTitleError={setTitleError}
                   bodyError={bodyError}
                   changeBodyError={setBodyError}
