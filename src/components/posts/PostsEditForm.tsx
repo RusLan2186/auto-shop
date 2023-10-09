@@ -2,8 +2,22 @@ import UiInput from '../auto/UI/Input/UiInput';
 import UiButton from '../auto/UI/Button/UiButton';
 import { useState } from 'react';
 import { messageTitleError, messageBodyError } from './postConstans';
+import { PostsList } from './PostsList';
 
-const PostsEditForm = ({
+
+interface PostsEditFormProps {
+  changeOpenModal:(OpenModal:boolean) =>void;
+  postItem:PostsList;
+  changePostItem:( postItem:PostsList[])=>void;
+  postsItem:PostsList[];
+  valueTitleError:string;
+  setValueTitleError:(  valueTitleError:string)=>void;
+  valueBodyError:string;
+  setValueBodyError:(  valueBodyError:string) =>void;
+}
+
+
+const PostsEditForm:React.FC<PostsEditFormProps> = ({
   changeOpenModal,
   postItem,
   changePostItem,
@@ -13,13 +27,13 @@ const PostsEditForm = ({
   valueBodyError,
   setValueBodyError,
 }) => {
-  const [valueTitle, setValueTitle] = useState(postItem.title);
-  const [valueBody, setValueBody] = useState(postItem.body);
+  const [valueTitle, setValueTitle] = useState<string>(postItem.title);
+  const [valueBody, setValueBody] = useState<string>(postItem.body);
 
-  const [valueTitleDirty, setValueTitleDirty] = useState(false);
-  const [valueBodyDirty, setValueBodyDirty] = useState(false);
+  const [valueTitleDirty, setValueTitleDirty] = useState<boolean>(false);
+  const [valueBodyDirty, setValueBodyDirty] = useState<boolean>(false);
 
-  const blurHundler = (e) => {
+  const blurHundler = (e:React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     switch (e.target.name) {
       case 'valueTitle':
         setValueTitleDirty(true);
@@ -30,7 +44,7 @@ const PostsEditForm = ({
     }
   };
 
-  const valueTitleHandler = (e) => {
+  const valueTitleHandler = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValueTitle(e.target.value);
     if (e.target.value.length < 3) {
       setValueTitleError(messageTitleError);
@@ -39,7 +53,7 @@ const PostsEditForm = ({
     }
   };
 
-  const valueBodyHandler = (e) => {
+  const valueBodyHandler = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValueBody(e.target.value);
     if (e.target.value.length < 5) {
       setValueBodyError(messageBodyError);
@@ -48,7 +62,7 @@ const PostsEditForm = ({
     }
   };
 
-  const savePost = (id) => {
+  const savePost = (id:number) => {
     let newPost = [...postsItem].map((item) => {
       if (item.id === id && valueTitle.length >= 3 && valueBody.length >= 5) {
         item.title = valueTitle;
@@ -68,9 +82,9 @@ const PostsEditForm = ({
       <h1 className='form__title'>Edit post</h1>
       {valueTitleDirty && valueTitleError && <div className='error'>{valueTitleError}</div>}
       <UiInput
-        onBlur={(e) => blurHundler(e)}
+        onBlur={(e:React.FocusEvent<HTMLInputElement>) => blurHundler(e)}
         value={valueTitle}
-        onChange={(e) => valueTitleHandler(e)}
+        onChange={(e:React.ChangeEvent<HTMLInputElement> ) => valueTitleHandler(e)}
         placeholder='Enter name'
         name='valueTitle'
       />
