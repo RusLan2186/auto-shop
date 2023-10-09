@@ -5,7 +5,7 @@ import Posts from "./posts/Posts"
 
 
 
-const Main = () => {
+const Main:React.FC = () => {
    return (
       <div className="container">
          <div className="main">
