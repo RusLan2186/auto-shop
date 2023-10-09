@@ -3,18 +3,19 @@ import RegistationForm from './RegistrationForm';
 import { NavLink } from 'react-router-dom';
 import HeaderModal from './HeaderModal';
 import FormHeader from './FormHeader';
-import { enterSite } from '../header/headerConstants';
+import { enterSite } from './headerConstants';
 import cart from '../img/Cart/cart.png';
 import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
-const Header = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [regModal, setRegModal] = useState(false);
-  const divRef = useRef();
-  const [openBurger, setOpenBurger] = useState(false);
-  const [cartAutosQuality, setCartAutosQuality] = useState(0);
+const Header:React.FC = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [regModal, setRegModal] = useState<boolean>(false);
+  const divRef = useRef<HTMLDivElement>(null);
+  const [openBurger, setOpenBurger] = useState<boolean>(false);
+  const [cartAutosQuality, setCartAutosQuality] = useState<number>(0);
 
-  const cartAutos = useSelector((store) => store.cart.items);
+  const cartAutos = useSelector((store:RootState) => store.cart.items);
 
   useEffect(() => {
     setCartAutosQuality(cartAutos.length);
@@ -64,7 +65,7 @@ const Header = () => {
       </div>
 
       <HeaderModal visible={openModal} changeVisible={setOpenModal}>
-        <FormHeader openModal={openModal} changeOpenModal={setOpenModal} />
+        <FormHeader openModal={openModal}  />
       </HeaderModal>
 
       <HeaderModal visible={regModal} changeVisible={setRegModal}>

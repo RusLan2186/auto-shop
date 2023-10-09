@@ -2,25 +2,33 @@ import cl from './FormHeader.module.scss'
 import { useEffect, useState, useRef } from 'react'
 import { emailMessageError, passwordMessageError, incorrectEmail, incorrectPass, enterProfileTitle, enter, okImg } from './headerConstants'
 
+interface ReferingPass {
+   showPass:string
+  setShowPass: HTMLInputElement
+}
+
+interface FormHeaderProps{
+   openModal:boolean
+}
+
+const FormHeader:React.FC<FormHeaderProps> = ({ openModal }) => {
+   const [email, setEmail] = useState<string>('')
+   const [password, setPassword] = useState<string>('')
+   const [emailDirty, setEmailDirty] = useState<boolean>(false)
+   const [passwordDirty, setPasswordDirty] = useState<boolean>(false)
+   const [emailError, setEmailError] = useState<string>(emailMessageError)
+   const [passwordError, setPasswordError] = useState<string>(passwordMessageError)
+   const [formValid, setFormValid] = useState<boolean>(false)
+   const [showPass, setShowPass] = useState<any>('password')
+   const [passOk, setPassOk] = useState<string>('')
+   const [mailOk, setMailOk] = useState<string>('')
+   const [check, setCheck] = useState<boolean>(false)
+
+   // const passREf = useRef<HTMLInputElement>(showPass);
+   const passREf = useRef<ReferingPass>(null);
 
 
-const FormHeader = ({ openModal }) => {
-   const [email, setEmail] = useState('')
-   const [password, setPassword] = useState('')
-   const [emailDirty, setEmailDirty] = useState(false)
-   const [passwordDirty, setPasswordDirty] = useState(false)
-   const [emailError, setEmailError] = useState(emailMessageError)
-   const [passwordError, setPasswordError] = useState(passwordMessageError)
-   const [formValid, setFormValid] = useState(false)
-   const [showPass, setShowPass] = useState('password')
-   const [passOk, setPassOk] = useState('')
-   const [mailOk, setMailOk] = useState('')
-   const [check, setCheck] = useState(false)
-
-   const passREf = useRef(showPass);
-
-
-   const showPassword = () => {
+   const showPassword = (e:React.MouseEvent<HTMLInputElement>) => {
       if (showPass === 'password') {
          setShowPass(passREf.current.type = 'text')
 
@@ -31,7 +39,7 @@ const FormHeader = ({ openModal }) => {
       }
    }
 
-   const blurHandler = (e) => {
+   const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
       switch (e.target.name) {
          case 'email':
             setEmailDirty(true)
@@ -42,7 +50,7 @@ const FormHeader = ({ openModal }) => {
       }
    }
 
-   const enailHundler = (e) => {
+   const enailHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setEmail(e.target.value)
       const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!re.test(String(e.target.value).toLowerCase())) {
@@ -55,7 +63,7 @@ const FormHeader = ({ openModal }) => {
          setMailOk(okImg)
       }
    }
-   const passwordHundler = (e) => {
+   const passwordHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setPassword(e.target.value)
       if (e.target.value.length < 5) {
          setPasswordError(incorrectPass)
