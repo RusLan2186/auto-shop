@@ -5,7 +5,7 @@ import Header from './components/header/Header';
 import Main from './components/Main';
 import Cart from './components/Cart/Cart';
 
-const App = () => {
+const App:React.FC = () => {
   return (
     <div className='wrapper'>
       <Header />
