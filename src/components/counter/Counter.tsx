@@ -2,9 +2,9 @@ import { useState } from "react"
 import { likeImage, disLikeImage } from './constCounter'
 
 
-const Counter = () => {
+const Counter:React.FC = () => {
 
-   const [like, setLike] = useState(0)
+   const [like, setLike] = useState<number>(0)
 
    const increment = () => {
       setLike(like + 1)
