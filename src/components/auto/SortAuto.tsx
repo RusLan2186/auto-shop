@@ -14,6 +14,7 @@ interface AutoSortProps{
 
   type M = MouseEvent & {
     path: Node[];
+    e:React.MouseEvent<HTMLElement>
 }
 
 const SortAuto:React.FC<AutoSortProps> = ({ autos, changeAuto }) => {
@@ -23,16 +24,17 @@ const SortAuto:React.FC<AutoSortProps> = ({ autos, changeAuto }) => {
 const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleClickOutside = (event:M ) => {
+    const handleClickOutside = (event:M) => {
       if(sortRef.current)
       if (!event.composedPath().includes(sortRef.current)) {
         setOpen(false);
       }
     };
-    //@ts-ignore
-    document.body.addEventListener('click', handleClickOutside );
+  
+// @ts-ignore
+    document.body.addEventListener('click', handleClickOutside ) ;
     return () => {
-        //@ts-ignore
+// @ts-ignore
       document.body.removeEventListener('click', handleClickOutside);
     };
   }, []);

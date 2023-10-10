@@ -1,20 +1,23 @@
 import { useState } from 'react';
 import cl from './Categories.module.scss';
+//@ts-ignore
 import { v4 as uuidv4 } from 'uuid';
 
+interface CategoriesProps{
+   activeCategorie:number;
+   onClickCategorie:( activeCategorie:number) =>void;
+}
 
-const Categories = ({activeCategorie, onClickCategorie}) =>{
 
+const Categories:React.FC<CategoriesProps> = ({activeCategorie, onClickCategorie}) =>{
 const categoriesList = ['all','mini cars', 'medium cars', 'larger cars', 'executive cars', 'luxury cars', 'sport cars']
+// const[catTitle, setCatTitle] = useState<string[]>([categoriesList[0]])
+const[catTitle, setCatTitle] = useState<string>()
+const[openCategorie, setOpenCategorie] = useState<boolean>(true)
 
-// const [activeCategorie, setActiveCategorie] = useState(0)
 
-const[catTitle, setCatTitle] = useState([categoriesList[0]])
-
-const[openCategorie, setOpenCategorie] = useState(true)
-
-const clickActiveCategorie = (i, categorie) =>{
- onClickCategorie(i)
+const clickActiveCategorie = (i:number, categorie:string) =>{
+   onClickCategorie(i)
    setOpenCategorie(true)
    setCatTitle(categorie);
    }
