@@ -73,13 +73,14 @@ export type AddPostType = Pick <PostsList, 'title' | "body">
         <UiButton onClick={() => setModal(true)}>{addPost}</UiButton>
         <div className='posts__sort'>
           <span>{sortedBy} </span>
+        
           <MySelect
             value={sortedPost}
             onChange={sortPost}
             defaultValue='Sorrted by:'
             options={[
-              { value: 'title', brand: 'Name ' },
-              { value: 'body', year: 'Desiption' },
+              { value: 'title', title: 'Name' },
+             { value: 'body', title: 'Desiption' },
             ]}
           ></MySelect>
         </div>
