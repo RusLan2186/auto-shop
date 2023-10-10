@@ -4,17 +4,27 @@ import UiInput from './UI/Input/UiInput';
 import { useCars } from './hooks/useCars';
 import { found } from './constAuto';
 import SortAuto from './SortAuto';
+import { AutoType } from './Auto';
 
-const AutoList = ({ autos, changeAutos }) => {
-  const [autoSorted, setAutoSorted] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
+
+
+interface AutoListProps{
+autos:AutoType[];
+
+changeAutos:(autos:AutoType[]) =>void;
+
+}
+
+const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
+  const [autoSorted, setAutoSorted] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const sortAndSearchAuto = useCars(autos, autoSorted, searchQuery);
-  const [searchResultsQuery, setSearchResultsQuery] = useState('');
-  const [clearSearch, setClearSearch] = useState(false);
+  const [searchResultsQuery, setSearchResultsQuery] = useState<string>('');
+  const [clearSearch, setClearSearch] = useState<boolean>(false);
 
-  const sortedAuto = (sort) => {
-    setAutoSorted(sort);
-  };
+  // const sortedAuto = (sort) => {
+  //   setAutoSorted(sort);
+  // };
 
   useEffect(() => {
     if (searchQuery.length !== 0) {
@@ -37,7 +47,7 @@ const AutoList = ({ autos, changeAutos }) => {
           </span>
           <UiInput
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
             placeholder='Search....'
           ></UiInput>
         </div>
@@ -47,7 +57,7 @@ const AutoList = ({ autos, changeAutos }) => {
 
       {sortAndSearchAuto.length !== 0 ? (
         <div className='auto__list'>
-          {sortAndSearchAuto.map((auto) => (
+          {sortAndSearchAuto.map((auto:AutoType) => (
             <AutoItem {...auto} key={auto.id} />
           ))}
         </div>
