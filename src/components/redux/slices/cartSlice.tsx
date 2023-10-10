@@ -4,10 +4,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export type ItemsType={
   id:number;
   brand:string;
-  price:string;
+  price?:string;
   imageUrl:string;
-  raiting:number;
-  category:string;
+  raiting?:number;
+  category?:string;
   count:number;
   numberPrice:number;
 }

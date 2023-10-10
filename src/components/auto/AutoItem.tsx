@@ -1,18 +1,19 @@
-import { useDispatch } from 'react-redux';
-import UiButton from '../auto/UI/Button/UiButton';
-import { useState } from 'react';
+import UiButton from './UI/Button/UiButton';
 import Counter from '../counter/Counter';
 import { addCar } from '../redux/slices/cartSlice';
+import { AutoType } from './Auto';
+import { useAppDispatch } from '../redux/store';
 
-const AutoItem = ({ id, brand, year, price, imageUrl }) => {
-  const dispatch = useDispatch();
-  let numberPrice = Number(price);
-  let count;
+
+
+const AutoItem:React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
+  const dispatch = useAppDispatch();
+  let numberPrice:number = Number(price);
+  let count:number = 1;
   const sendToCart = () => {
     const item = { id, brand, numberPrice, imageUrl, year, count };
-
-    dispatch(addCar(item));
-  };
+ dispatch(addCar(item));
+     };
   return (
     <div className='auto__item'>
       <a className='image__link' href='#'>

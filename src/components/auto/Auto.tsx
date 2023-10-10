@@ -44,7 +44,7 @@ const Auto:React.FC = () => {
       });
   }, [activeCathegorie]);
 
-console.log(autos);
+
 
 
   return (
