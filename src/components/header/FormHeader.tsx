@@ -91,6 +91,7 @@ const FormHeader:React.FC<FormHeaderProps> = ({ openModal }) => {
          setPasswordError('')
          setFormValid(false)
          setCheck(false)
+         setShowPass(passREf.current.type = 'password')
       
   } else {
          setFormValid(false)
