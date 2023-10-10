@@ -13,10 +13,16 @@ import { RootState, useAppDispatch } from '../redux/store';
 export type AutoType = {
   id:number;
   brand:string;
-  price:string;
+  price:string ;
   imageUrl:string;
   year:string;
-}
+  numberPrice:number;
+  raiting:number;
+  }
+
+  
+
+
 
 const Auto:React.FC = () => {
   const [autos, setAutos] = useState<AutoType[]>();

@@ -1,43 +1,62 @@
 import { useEffect, useRef, useState } from 'react';
 import { brand, year, price, raitingMin, raitingPlus, sortedBy } from './constAuto';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSortAuto, setSortProperty } from '../redux/slices/filterSlice';
+import { useSelector } from 'react-redux';
+import { SortType, setSortAuto, setSortProperty } from '../redux/slices/filterSlice';
+import { RootState, useAppDispatch } from '../redux/store';
+import { AutoType } from './Auto';
 
-const SortAuto = ({ autos, changeAuto }) => {
-  const dispatch = useDispatch();
-  const sortTitle = useSelector((state) => state.filters.sort.title);
-  const sortRef = useRef();
 
-  const [open, setOpen] = useState(false);
+
+interface AutoSortProps{
+  autos:AutoType[];
+ changeAuto:(autos:AutoType[]) =>void;
+  }
+
+  type M = MouseEvent & {
+    path: Node[];
+}
+
+const SortAuto:React.FC<AutoSortProps> = ({ autos, changeAuto }) => {
+  const dispatch = useAppDispatch();
+  const sortTitle = useSelector((state:RootState) => state.filters.sort.title);
+  const sortRef = useRef<HTMLDivElement>(null);
+const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event:M ) => {
+      if(sortRef.current)
       if (!event.composedPath().includes(sortRef.current)) {
         setOpen(false);
       }
     };
-    document.body.addEventListener('click', handleClickOutside);
+    //@ts-ignore
+    document.body.addEventListener('click', handleClickOutside );
     return () => {
+        //@ts-ignore
       document.body.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
-  const sortBy = (field) => {
-    let result;
 
-    if (field === brand) {
-      result = [...autos].sort((a, b) => {
-        if (a['brand'] < b['brand']) return -1;
-      });
+
+  let result:AutoType[];
+  
+  const sortBy = (field:string) => {
+
+  if (field === brand) {
+    
+      result = [...autos].sort((a, b) => a['brand'].localeCompare(b['brand']));
     }
     if (field === year) {
-      result = [...autos].sort((a, b) => a.year - b.year);
-    }
-    if (field === price) {
-      result = [...autos].sort((a, b) => a.price - b.price);
+      result = [...autos].sort((a, b) => +a.year - +b.year);
+     }
+
+   if (field === price) {
+      result = [...autos].sort((a, b) => +a.price - +b.price);
     }
     if (field === raitingPlus) {
       result = [...autos].sort((a, b) => a.raiting - b.raiting);
+ 
     }
     if (field === raitingMin) {
       result = [...autos].sort((a, b) => b.raiting - a.raiting);

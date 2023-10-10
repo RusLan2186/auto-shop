@@ -10,9 +10,7 @@ import { AutoType } from './Auto';
 
 interface AutoListProps{
 autos:AutoType[];
-
 changeAutos:(autos:AutoType[]) =>void;
-
 }
 
 const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
@@ -22,9 +20,7 @@ const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
   const [searchResultsQuery, setSearchResultsQuery] = useState<string>('');
   const [clearSearch, setClearSearch] = useState<boolean>(false);
 
-  // const sortedAuto = (sort) => {
-  //   setAutoSorted(sort);
-  // };
+
 
   useEffect(() => {
     if (searchQuery.length !== 0) {

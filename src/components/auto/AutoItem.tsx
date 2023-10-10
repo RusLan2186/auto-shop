@@ -11,7 +11,7 @@ const AutoItem:React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
   let numberPrice:number = Number(price);
   let count:number = 1;
   const sendToCart = () => {
-    const item = { id, brand, numberPrice, imageUrl, year, count };
+    const item = { id, brand, numberPrice, imageUrl,  count, year };
  dispatch(addCar(item));
      };
   return (

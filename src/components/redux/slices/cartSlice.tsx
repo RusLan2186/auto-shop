@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 
+
 export type ItemsType={
   id:number;
   brand:string;
@@ -10,7 +11,10 @@ export type ItemsType={
   category?:string;
   count:number;
   numberPrice:number;
+  year:string;
 }
+
+
 
 
 export interface CartSliceState{
