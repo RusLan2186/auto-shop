@@ -11,7 +11,6 @@ value:string;
 
 onChange:(e:string) => void;
 options:OptionsType[];
-// children:React.ReactChild | React.ReactNode;
 defaultValue:string;
 
 }
