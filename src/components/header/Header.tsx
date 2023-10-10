@@ -69,7 +69,7 @@ const Header:React.FC = () => {
       </HeaderModal>
 
       <HeaderModal visible={regModal} changeVisible={setRegModal}>
-        <RegistationForm regModal={regModal} />
+        <RegistationForm regModal={regModal}  />
       </HeaderModal>
     </div>
   );

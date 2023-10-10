@@ -4,6 +4,7 @@ import { emailMessageError, passwordMessageError, incorrectEmail, incorrectPass,
 
 interface RegistrationFormProps{
    regModal:boolean;
+  
 }
 type TypeString= Record <string, string>
 type TypeBoolean= {
@@ -33,8 +34,8 @@ const [check, setCheck] = useState<boolean>(false)
    const showPassword = (e:React.MouseEvent<HTMLInputElement>) => {
       if (showPass === 'password') {
          setShowPass(passREf.current.type = 'text')
+}
 
-      }
       else {
          setShowPass(passREf.current.type = 'password')
 
@@ -87,7 +88,7 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
 
    const passwordHundler = (e:React.ChangeEvent<HTMLInputElement>) => {
       setInfo({ ...info, password: e.target.value })
-      if (e.target.value.length < 5) {
+      if (e.target.value.length <= 5) {
          setError({ ...error, passwordError: incorrectPass })
          if (!e.target.value) {
             setError({ ...error, passwordError: passwordMessageError })
@@ -154,6 +155,8 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
          setFormValid(false)
          setCheck(false)
          setCheckRepeat(false)
+         setShowPass(passREf.current.type = 'password')
+         setShowRepeatPass(RepeatPassREf.current.type = 'password')
 
       } else {
          setFormValid(false)
@@ -179,6 +182,7 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
                      placeholder="Enter your e-mail"
                      name='email'
                      id={'email'}
+                     autoComplete='off'
                   />
                   {(dirty.emailD && !error.emailError && info.email.length > 5) && <img className={cl.ok} src={ok.emailOk} alt="ok" />}
                </div>
@@ -193,6 +197,7 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
                      placeholder="Enter your password"
                      name='password'
                      ref={passREf}
+                     autoComplete='off'
                   />
                   {(dirty.passwordD && !error.passwordError && info.password.length > 5) && <img className={cl.ok} src={ok.passOk} alt="ok" />}
                </div>
@@ -214,6 +219,7 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
                      placeholder="Repeat your password"
                      name='Repeatpass'
                      ref={RepeatPassREf}
+                     autoComplete='off'
 
                   />
                   {(dirty.repeatPassD && !error.repeatPassError && info.repeatPass.length > 5) && <img className={cl.ok} src={ok.repeatPassOk} alt="ok" />}
@@ -236,6 +242,7 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
                      type="text"
                      placeholder="Enter your name"
                      name='userName'
+                     autoComplete='off'
                   />
                   {(dirty.userNameD && !error.userNameError && info.userName.length > 2) && <img className={cl.ok} src={ok.userNameOk} alt="ok" />}
                </div>
@@ -246,10 +253,10 @@ const blurHandler = (e:React.FocusEvent<HTMLInputElement>) => {
                      value={info.userNumber}
                      onChange={e => userNumberHundler(e)}
                      onBlur={e => blurHandler(e)}
-                     type="tel"
+                     type="number"
                      placeholder="Enter phone number +38"
                      name='userNumber'
-
+                     autoComplete='off'
 
                   />
                   {(dirty.userNumberD && !error.userNumberError && info.userNumber.length > 12) && <img className={cl.ok} src={ok.userNumberOk} alt="ok" />}
