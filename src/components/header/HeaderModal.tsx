@@ -1,6 +1,6 @@
 // import cl from './MyModal.module.scss';
 
-import cl from '../Modal/MyModal.module.scss'
+import cl from '../modal/MyModal.module.scss'
 
 interface HeaderModalProps{
    visible:boolean;

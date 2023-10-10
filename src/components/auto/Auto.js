@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AutoList from './AutoList';
 // import { audiCar, bmwCar, mercCar, ladaCar, toyotaCar, mitsubCar } from './carsImages'
-import Loader from '../Loader/Loader';
+import Loader from '../loader/Loader';
 import Categories from './Categories';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCotegoryId } from '../redux/slices/filterSlice';

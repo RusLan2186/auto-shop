@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import HeaderModal from './HeaderModal';
 import FormHeader from './FormHeader';
 import { enterSite } from './headerConstants';
-import cart from '../Cart/cart.png';
+import cart from '../Cart/image/cart.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 

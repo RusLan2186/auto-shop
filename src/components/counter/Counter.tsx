@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { likeImage, disLikeImage } from './constCounter'
+import  likeImage  from './image/like.png';
+import disLikeImage from './image/dislike.png'
 
 
 const Counter:React.FC = () => {

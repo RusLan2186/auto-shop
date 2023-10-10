@@ -1,5 +1,5 @@
-import edit from './redact.png';
-import del from './delete.png';
+import edit from './image/redact.png';
+import del from './image/delete.png';
 
 // form
 export const messageTitleError:string = 'Enter name';

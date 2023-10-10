@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import MyModal from "../Modal/MyModal"
+import MyModal from "../modal/MyModal"
 
 import PostsEditForm from './PostsEditForm'
 import { editPostImage, deletePostImage } from './postConstans'

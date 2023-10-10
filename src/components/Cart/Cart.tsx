@@ -1,8 +1,7 @@
 import {  useSelector } from 'react-redux';
-import smile from './smile.png';
+import smile from './image/smile.png';
 import cl from './Cart.module.scss';
 import {  clearCart } from '../redux/slices/cartSlice';
-// import { v4 as uuidv4 } from 'uuid';
 import CartItem from './CartItem';
 import UiButton from '../auto/UI/Button/UiButton';
 import { RootState, useAppDispatch } from '../redux/store';

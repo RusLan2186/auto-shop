@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import UiInput from '../auto/UI/Input/UiInput';
 import UiButton from '../auto/UI/Button/UiButton';
-import MyModal from '../Modal/MyModal';
+import MyModal from '../modal/MyModal';
 import MySelect from '../auto/UI/Select/MySelect';
 import PostsForm from './PostsForm';
 import { addPost, notFound, sortedBy } from './postConstans';
