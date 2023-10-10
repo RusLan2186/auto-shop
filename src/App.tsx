@@ -3,7 +3,7 @@ import './scss/Reset.scss';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Main from './components/Main';
-import Cart from './components/Cart/Cart';
+import Cart from './components/cart/Cart';
 
 const App:React.FC = () => {
   return (
