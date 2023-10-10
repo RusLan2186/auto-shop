@@ -68,6 +68,7 @@ const PostsEditForm:React.FC<PostsEditFormProps> = ({
         item.title = valueTitle;
         item.body = valueBody;
         changeOpenModal(false);
+       
       }
       if (valueTitle.length < 3 || valueBody.length < 5) {
         changeOpenModal(true);
