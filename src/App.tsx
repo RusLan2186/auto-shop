@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Main from './components/Main';
 import Cart from './components/cart/Cart';
-import FullAuto from './components/auto/FullAuto';
+import FullAuto from './components/auto/fullauto/FullAuto';
 
 const App:React.FC = () => {
 

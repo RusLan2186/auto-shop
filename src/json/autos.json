@@ -1,1 +1,59 @@
-[{"id":3,"brand":"Audi","year":"2012","price":"500000","imageUrl":"https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg","category":"2, 3, 5","raiting":2},{"id":"1","brand":"Bmw","year":"2020","price":"15000","imageUrl":"https://cdn.motor1.com/images/mgl/P33NqL/s3/2022-bmw-m3-touring.jpg","category":"1, 4, 6","raiting":3},{"id":"2","brand":"Mercedes","year":"2022","price":"300000","imageUrl":"https://www.mercedes-benz.ua/content/ukraine/uk/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569/simple_teaser_item_1.component.damq2.3361041994747.jpg/mercedes-benz-gls-suv-x167-pad-home-teaser-764x573-03-2023.jpg","category":"2, 3, 5, 1","raiting":4},{"id":"4","brand":"Toyota","year":"2005","price":"18000","imageUrl":"https://motor.ru/imgs/2023/03/27/07/5850601/b7834cb797d709635d14892ca09f97f395ea4137.jpg","category":"2, 3, 5, 6, 2","raiting":1},{"id":"5","brand":"Mitsubisy","year":"2023","price":"19000","imageUrl":"https://www.ixbt.com/img/n1/news/2023/6/1/photo_2023-07-31_11-53-10_large.jpg","category":"1,2","raiting":5},{"id":"6","brand":"Porshe","year":"2000","price":"30000","imageUrl":"https://img.championat.com/c/1200x900/news/big/j/d/porshe-vnedrila-v-novejshuyu-911-yu-fishku-iz-f-1_16608943661644650323.jpg","category":"2, 3, 5, 4, 1","raiting":6}]
+[
+   {
+      "id": "3",
+      "brand": "Audi",
+      "year": "2012",
+      "price": "500000",
+      "imageUrl": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg",
+      "category": "2, 3, 5",
+      "raiting": 2
+   },
+   {
+      "id": "1",
+      "brand": "Bmw",
+      "year": "2020",
+      "price": "15000",
+      "imageUrl": "https://cdn.motor1.com/images/mgl/P33NqL/s3/2022-bmw-m3-touring.jpg",
+      "category": "1, 4, 6",
+      "raiting": 3,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "discription": "The BMW X6 is a mid-size luxury crossover SUV by German automaker BMW. The BMW X6 is the originator of the sports activity coupé (SAC), referencing its sloping rear roof design. It combines the attributes of an SUV (high ground clearance, all-wheel drive and all-weather ability, large wheels and tires) with the stance of a coupé (styling featuring a sloping roof). It is built in BMW's North American plant in Greer, South Carolina alongside the BMW X5, whose platform it shares. Prior to the release of the X7, the X6 was considered a flagship SUV for BMW."
+   },
+   {
+      "id": "2",
+      "brand": "Mercedes",
+      "year": "2022",
+      "price": "300000",
+      "imageUrl": "https://www.mercedes-benz.ua/content/ukraine/uk/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569/simple_teaser_item_1.component.damq2.3361041994747.jpg/mercedes-benz-gls-suv-x167-pad-home-teaser-764x573-03-2023.jpg",
+      "category": "2, 3, 5, 1",
+      "raiting": 4
+   },
+   {
+      "id": "4",
+      "brand": "Toyota",
+      "year": "2005",
+      "price": "18000",
+      "imageUrl": "https://motor.ru/imgs/2023/03/27/07/5850601/b7834cb797d709635d14892ca09f97f395ea4137.jpg",
+      "category": "2, 3, 5, 6, 2",
+      "raiting": 1
+   },
+   {
+      "id": "5",
+      "brand": "Mitsubisy",
+      "year": "2023",
+      "price": "19000",
+      "imageUrl": "https://www.ixbt.com/img/n1/news/2023/6/1/photo_2023-07-31_11-53-10_large.jpg",
+      "category": "1,2",
+      "raiting": 5
+   },
+   {
+      "id": "6",
+      "brand": "Porshe",
+      "year": "2000",
+      "price": "30000",
+      "imageUrl": "https://img.championat.com/c/1200x900/news/big/j/d/porshe-vnedrila-v-novejshuyu-911-yu-fishku-iz-f-1_16608943661644650323.jpg",
+      "category": "2, 3, 5, 4, 1",
+      "raiting": 6
+   }
+]
