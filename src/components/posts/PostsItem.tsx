@@ -45,7 +45,7 @@ const PostsItem:React.FC<PostsItemProps> = ({ postItem, number, remove, postsLis
             <Counter />
          </div >
          {<MyModal visible={openMyModal} changeVisible={setOpenMyModal}>
-            <PostsEditForm postItem={postItem} changePostItem={setPostsItem} changeOpenModal={setOpenMyModal} postsItem={postsList1} valueTitleError={titleError} setValueTitleError={changeTitleError} valueBodyError={bodyError} setValueBodyError={changeBodyError} />
+            <PostsEditForm openMyModal={openMyModal} postItem={postItem} changePostItem={setPostsItem} changeOpenModal={setOpenMyModal} postsItem={postsList1} valueTitleError={titleError} setValueTitleError={changeTitleError} valueBodyError={bodyError} setValueBodyError={changeBodyError} />
          </MyModal>}
       </div>
    )

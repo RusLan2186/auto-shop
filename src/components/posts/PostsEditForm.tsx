@@ -1,6 +1,6 @@
 import UiInput from '../auto/UI/Input/UiInput';
 import UiButton from '../auto/UI/Button/UiButton';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { messageTitleError, messageBodyError } from './postConstans';
 import { PostsList } from './PostsList';
 
@@ -14,6 +14,7 @@ interface PostsEditFormProps {
   setValueTitleError:(  valueTitleError:string)=>void;
   valueBodyError:string;
   setValueBodyError:(  valueBodyError:string) =>void;
+  openMyModal:boolean;
 }
 
 
@@ -26,6 +27,7 @@ const PostsEditForm:React.FC<PostsEditFormProps> = ({
   setValueTitleError,
   valueBodyError,
   setValueBodyError,
+  openMyModal
 }) => {
   const [valueTitle, setValueTitle] = useState<string>(postItem.title);
   const [valueBody, setValueBody] = useState<string>(postItem.body);
@@ -77,6 +79,14 @@ const PostsEditForm:React.FC<PostsEditFormProps> = ({
     });
     changePostItem(newPost);
   };
+  useEffect(() =>{
+    if(openMyModal === false){
+       setValueTitle(postItem.title);
+       setValueBody(postItem.body);
+       setValueBodyError('');
+       setValueTitleError('');
+    }
+  },[openMyModal])
 
   return (
     <div className='form'>
