@@ -7,11 +7,13 @@ const Counter:React.FC = () => {
 
    const [like, setLike] = useState<number>(0)
 
-   const increment = () => {
+   const increment = (e:React.MouseEvent<HTMLImageElement>) => {
+      e.preventDefault()
       setLike(like + 1)
    }
 
-   const decrement = () => {
+   const decrement = (e:React.MouseEvent<HTMLImageElement>) => {
+      e.preventDefault()
       setLike(like - 1)
    }
 

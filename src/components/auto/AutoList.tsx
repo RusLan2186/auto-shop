@@ -5,6 +5,7 @@ import { useCars } from './hooks/useCars';
 import { found } from './constAuto';
 import SortAuto from './SortAuto';
 import { AutoType } from './Auto';
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,7 +55,7 @@ const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
       {sortAndSearchAuto.length !== 0 ? (
         <div className='auto__list'>
           {sortAndSearchAuto.map((auto:AutoType) => (
-            <AutoItem {...auto} key={auto.id} />
+          <Link  key={auto.id} to={`/fullauto/${auto.id}`}> <AutoItem {...auto} /></Link>
           ))}
         </div>
       ) : (

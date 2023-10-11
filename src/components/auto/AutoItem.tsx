@@ -10,7 +10,8 @@ const AutoItem:React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
   const dispatch = useAppDispatch();
   let numberPrice:number = Number(price);
   let count:number = 1;
-  const sendToCart = () => {
+  const sendToCart = (e:React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     const item = { id, brand, numberPrice, imageUrl,  count, year };
  dispatch(addCar(item));
      };
