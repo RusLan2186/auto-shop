@@ -5,22 +5,14 @@ import { AutoType } from '../Auto'
 import Loader from '../../loader/Loader'
 import cl from './FullAuto.module.scss'
 import Counter from '../../counter/Counter'
+import { useAppDispatch } from '../../redux/store'
+import { FullAutoType, addFullCar } from '../../redux/slices/cartSlice'
 
-export type FullAutoType = {
-  id: number;
-  brand: string;
-  price: string;
-  imageUrl: string;
-  year: string;
-  numberPrice: number;
-  raiting: number;
-  discription: string;
-  motor: string;
-  transmission: string;
-}
+
 
 
 const FullAuto: React.FC = () => {
+  const dispatch = useAppDispatch()
   const [isLoad, setIsload] = useState<boolean>(false)
   const [fullAuto, setFullAuto] = useState<FullAutoType>()
   const [errorFullAutoLoading, setErrorFullAutoLoading] = useState<string>('')
@@ -46,26 +38,40 @@ const FullAuto: React.FC = () => {
 
 
 
+  const sendToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    if (fullAuto) {
+      const item = { ...fullAuto };
+      dispatch(addFullCar(item));
+    }
+
+  };
+
   return (
     <div className='container'>
       <div className={cl.fetchActions}>
         {isLoad && <Loader />}
         {errorFullAutoLoading && <div>
           <h2>{errorFullAutoLoading}</h2>
-          <button onClick={() => navigate('/')}>Back</button>
+          <button className={cl.btn} onClick={() => navigate('/')}>Back</button>
         </div>
         }
       </div>
-      <button className={cl.btn} onClick={() => navigate('/')}>Back</button>
+      <div className={cl.btnWrapper}>
+        <button className={cl.btn} onClick={() => navigate('/')}>Back</button>
+        <button onClick={sendToCart} className={cl.btnBuy}>Add to cart</button>
+      </div>
       {fullAuto &&
         <div>
           <div className={cl.wrapper}>
             <div className={cl.info}>
+
               <h1 className={cl.brand}>Brand: <span>{fullAuto.brand}</span></h1>
               <h2 className={cl.year}>Year:<span> {fullAuto.year}</span></h2>
               <h2 className={cl.price}>Price:<span> {fullAuto.price}$</span></h2>
               <h2 className={cl.price}>Motor:<span> {fullAuto.motor}</span></h2>
               <h2 className={cl.price}>Transmission:<span> {fullAuto.transmission}</span></h2>
+
 
             </div>
             <div className={cl.photos}>

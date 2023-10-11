@@ -6,15 +6,14 @@ import { useAppDispatch } from '../redux/store';
 
 
 
-const AutoItem:React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
+const AutoItem: React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
   const dispatch = useAppDispatch();
-  let numberPrice:number = Number(price);
-  let count:number = 1;
-  const sendToCart = (e:React.MouseEvent<HTMLButtonElement>) => {
+  let count: number = 1;
+  const sendToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const item = { id, brand, numberPrice, imageUrl,  count, year };
- dispatch(addCar(item));
-     };
+    const item = { id, brand, price, imageUrl, count, year };
+    dispatch(addCar(item));
+  };
   return (
     <div className='auto__item'>
       <a className='image__link' href='#'>
