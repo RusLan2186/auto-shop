@@ -31,7 +31,6 @@ const CartItem: React.FC<CartItemProps> = ({ auto }) => {
     <div className={cl.cartItemWContainer}>
       <div className={cl.cartItem}>
         <Link className={cl.link} to={`/fullauto/${auto.id}`}>   <img className={cl.imageCar} src={auto.imageUrl} alt='auto' /></Link>
-        {/* <img className={cl.imageCar} src={auto.imageUrl} alt='auto' /> */}
         <div className={cl.autoDiscription}>
           <p className={cl.brand}>
             Brand: <span>{auto.brand}</span>
@@ -52,8 +51,6 @@ const CartItem: React.FC<CartItemProps> = ({ auto }) => {
               </div>
               <div>
                 <p className={cl.price}>
-                  {/* <span>Price:</span> {auto.numberPrice * auto.count} $ */}
-
                   <span>Price:</span> {Number(auto.price) * auto.count} $
                 </p>
               </div>
