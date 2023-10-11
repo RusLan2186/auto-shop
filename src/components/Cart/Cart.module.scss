@@ -161,8 +161,14 @@ marquee {
       text-align: center;
    }
 }
+
+.link {
+   display: block;
+   width: 60%;
+}
 .imageCar {
-   width: 30%;
+   width: 100%;
+
    @media (max-width: 900px) {
       width: 40%;
    }

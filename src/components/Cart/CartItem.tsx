@@ -1,8 +1,8 @@
 import React from 'react';
 import cl from './Cart.module.scss';
 import { ItemsType, deleteCar, minusCar, plusCar } from '../redux/slices/cartSlice';
-import { useState } from 'react';
 import { useAppDispatch } from '../redux/store';
+import { Link } from 'react-router-dom';
 
 interface CartItemProps{
 
@@ -11,7 +11,7 @@ interface CartItemProps{
 
 const CartItem:React.FC<CartItemProps> = ({  auto }) => {
   const dispatch = useAppDispatch();
-  const [disable, setDisable] = useState(false);
+
 
   const removeAuto = () => {
     dispatch(deleteCar(auto.id));
@@ -30,7 +30,8 @@ const CartItem:React.FC<CartItemProps> = ({  auto }) => {
   return (
     <div className={cl.cartItemWContainer}>
       <div className={cl.cartItem}>
-        <img className={cl.imageCar} src={auto.imageUrl} alt='auto' />
+     <Link className={cl.link}  to={`/fullauto/${auto.id}`}>   <img className={cl.imageCar} src={auto.imageUrl} alt='auto' /></Link>
+     {/* <img className={cl.imageCar} src={auto.imageUrl} alt='auto' /> */}
         <div className={cl.autoDiscription}>
           <p className={cl.brand}>
             Brand: <span>{auto.brand}</span>

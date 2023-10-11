@@ -2,35 +2,41 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
 import { AutoType } from './Auto'
+import Loader from '../loader/Loader'
 
 const FullAuto:React.FC = () => {
+  const [isLoad, setIsload] = useState<boolean>(false)
   const [fullAuto, setFullAuto] = useState<AutoType>()
-  const [error, setError] = useState<string>('')
+  const [errorFullAutoLoading, setErrorFullAutoLoading] = useState<string>('')
     const {id} = useParams()
 
     useEffect(() => {
       async function FetchAuto(){
         try{
+          setIsload(true)
           const responce = await axios.get<AutoType>('https://64cbc2282eafdcdc85194590.mockapi.io/autos/' + id)
           setFullAuto(responce.data)
+          setIsload(false)
+          setErrorFullAutoLoading('')
         } catch(e:any) {
-          setError(e.message)
+          setErrorFullAutoLoading(e.message)
+          setIsload(false)
           
         }
      }
      FetchAuto()
     },[])
 
-if(!fullAuto){
-    return 'loading'
+if(!fullAuto ){
+return  <Loader/>
    }
-   if(error){
-    return "error"
+   if(!fullAuto && errorFullAutoLoading ){
+   return errorFullAutoLoading
    }
 
   return (
     <div>
-   <p style={{color:'red'}}>   {error}</p>
+   <p style={{color:'red'}}>   {errorFullAutoLoading}</p>
 <h1>{fullAuto.brand}</h1>
 <h2>{fullAuto.year}</h2>
 <h2>{fullAuto.price}</h2>
