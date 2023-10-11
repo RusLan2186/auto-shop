@@ -29,21 +29,26 @@ const FullAuto:React.FC = () => {
      FetchAuto()
     },[])
 
-if(!fullAuto ){
-return  <Loader/>
-   }
-   if(!fullAuto && errorFullAutoLoading ){
-   return errorFullAutoLoading
-   }
+
 
   return (
     <div>
-   <p style={{color:'red'}}>   {errorFullAutoLoading}</p>
-<h1>{fullAuto.brand}</h1>
-<h2>{fullAuto.year}</h2>
-<h2>{fullAuto.price}</h2>
-<img src={fullAuto.imageUrl} alt="" />
- <button onClick={() => navigate('/')}>Back</button>
+      {isLoad &&  <Loader/>}
+      {errorFullAutoLoading && <div>
+        <h2>{errorFullAutoLoading}</h2>
+        <button onClick={() => navigate('/')}>Back</button>
+        </div>
+     }
+      {fullAuto &&
+       <div>
+       <p style={{color:'red'}}>   {errorFullAutoLoading}</p>
+    <h1>{fullAuto.brand}</h1>
+    <h2>{fullAuto.year}</h2>
+    <h2>{fullAuto.price}</h2>
+    <img src={fullAuto.imageUrl} alt="" />
+     <button onClick={() => navigate('/')}>Back</button>
+   </div> }
+
      
     </div>
   )
