@@ -5,12 +5,25 @@
       "year": "2012",
       "price": "500000",
       "imageUrl": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg",
+      "imageOne": "https://i.infocar.ua/i/12/6035/1400x936.jpg",
+      "imageTwo": "https://cdn3.riastatic.com/photosnew/auto/photo/audi__511077747fx.jpg",
       "category": "2, 3, 5",
       "raiting": 2,
       "motor": "Electric motor 3-phase synchronous electric motor",
       "transmission": "Manual transmission. Automatic transmission",
       "engine": "Inline-four petrol engine. V6 petrol engine. Inline-four diesel engine V6 diesel engine",
-      "discription": "The Audi A4 is a line of luxury compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage, with the initial A4 designated as the B5-series, followed by the B6, B7, B8, and the B9."
+      "discription": "The Audi A4 is a line of luxury compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage, with the initial A4 designated as the B5-series, followed by the B6, B7, B8, and the B9.",
+      "images": [
+         {
+            "imgSrc": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg"
+         },
+         {
+            "imgSrc": "https://i.infocar.ua/i/12/6035/1400x936.jpg"
+         },
+         {
+            "imgSrc": "https://focus.ua/static/storage/thumbs/1200x630/8/a6/bf37018d-478de0b2a164bb9387975024b2feda68.jpg?v=4237_1"
+         }
+      ]
    },
    {
       "id": "1",
@@ -23,7 +36,18 @@
       "motor": "Electric motor 3-phase synchronous electric motor",
       "transmission": "6-speed automatic, 8-speed automatic",
       "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
-      "discription": "The BMW X6 is a mid-size luxury crossover SUV by German automaker BMW. The BMW X6 is the originator of the sports activity coupé (SAC), referencing its sloping rear roof design. It combines the attributes of an SUV (high ground clearance, all-wheel drive and all-weather ability, large wheels and tires) with the stance of a coupé (styling featuring a sloping roof). It is built in BMW's North American plant in Greer, South Carolina alongside the BMW X5, whose platform it shares. Prior to the release of the X7, the X6 was considered a flagship SUV for BMW."
+      "discription": "The BMW X6 is a mid-size luxury crossover SUV by German automaker BMW. The BMW X6 is the originator of the sports activity coupé (SAC), referencing its sloping rear roof design. It combines the attributes of an SUV (high ground clearance, all-wheel drive and all-weather ability, large wheels and tires) with the stance of a coupé (styling featuring a sloping roof). It is built in BMW's North American plant in Greer, South Carolina alongside the BMW X5, whose platform it shares. Prior to the release of the X7, the X6 was considered a flagship SUV for BMW.",
+      "images": [
+         {
+            "imgSrc": "https://www.bmw.ua/content/dam/bmw/common/all-models/x-series/x6/2023/highlights/bmw-x-series-x6-sp-desktop.jpg"
+         },
+         {
+            "imgSrc": "https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/5-Series-2024/10182/1685002609273/front-left-side-47.jpg"
+         },
+         {
+            "imgSrc": "https://i.infocar.ua/i/12/6588/1400x936.jpg"
+         }
+      ]
    },
    {
       "id": "2",
@@ -36,7 +60,18 @@
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "9-speed automatic (9G-Tronic)",
       "engine": "Petrol mild hybrid: 2.0 L M 254 I4 turbo3.0 L M 256 I6 turbo. Petrol plug-in hybrid: 2.0 L M 254 I4 turbo",
-      "discription": "The W214 features a four-arm multi-link suspension setup at the front, while a five-link setup is positioned at the rear with Agility Control steel-sprung suspension and adjustable damping, which is standard on the mild hybrids. Ride height for plug-in hybrids is lowered by 15 mm (0.59 in). Air suspension is optional, as part of the Technology package, which adds Airmatic with continuously variable damping. Rear-wheel steering is optional, which now supports steering of up to 4.5 degrees, reducing the vehicle's turning circle by 90 cm. For RWD models, the turning circle is 10.8 m, and 11.1 m for AWD models. All-wheel steering is also available.[10][11] For the saloon model, its boot capacity is 540 litres (19 cu ft), though for the estate model boot space increases to 615 litres (21.7 cu ft).[8] With rear seats folded, boot space expands to 1,675 litres (59.2 cu ft) on the estate."
+      "discription": "The W214 features a four-arm multi-link suspension setup at the front, while a five-link setup is positioned at the rear with Agility Control steel-sprung suspension and adjustable damping, which is standard on the mild hybrids. Ride height for plug-in hybrids is lowered by 15 mm (0.59 in). Air suspension is optional, as part of the Technology package, which adds Airmatic with continuously variable damping. Rear-wheel steering is optional, which now supports steering of up to 4.5 degrees, reducing the vehicle's turning circle by 90 cm. For RWD models, the turning circle is 10.8 m, and 11.1 m for AWD models. All-wheel steering is also available.[10][11] For the saloon model, its boot capacity is 540 litres (19 cu ft), though for the estate model boot space increases to 615 litres (21.7 cu ft).[8] With rear seats folded, boot space expands to 1,675 litres (59.2 cu ft) on the estate.",
+      "images": [
+         {
+            "imgSrc": "https://img.mercedes-benz-kiev.com/data/news/266-mercedes-benz-eqs-v297/mercedes-benz-eqs-v297.jpg"
+         },
+         {
+            "imgSrc": "https://cdn.motor1.com/images/mgl/jllxgl/s3/2023-mercedes-amg-c43-front-3-4.jpg"
+         },
+         {
+            "imgSrc": "https://assets.avtocod.ru/storage/images/articles/tnVfaDJBGjosFRVJvchCCqH0Wp5ukNgeqkSu41Sh.jpg"
+         }
+      ]
    },
    {
       "id": "4",
@@ -49,7 +84,18 @@
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "5-speed R151 manual.6-speed RC60/RC61 manual / iMT manual.5-speed A750F automatic",
       "engine": "Petrol mild hybrid: 2.0 L M 254 I4 turbo3.0 L M 256 I6 turbo. Petrol plug-in hybrid: 2.0 L M 254 I4 turbo",
-      "discription": "The model was subsequently introduced in the Philippines in July 2015,[83] Mexico and GCC countries in August 2015,[84][85][86] Argentina and Brazil in November 2015,while in Europe specifications was unveiled in September 2015 for a mid-2016 market introduction.[89][90] Introductions of the model in more markets started in 2016. In March 2016, the model was released in South Africa, where it is also produced. In Malaysia, it was launched in May 2016,[92] while in Pakistan it was launched in September 2016.[82] In September 2017, Toyota released the Hilux in Japan for the first time since 2004."
+      "discription": "The model was subsequently introduced in the Philippines in July 2015,[83] Mexico and GCC countries in August 2015,[84][85][86] Argentina and Brazil in November 2015,while in Europe specifications was unveiled in September 2015 for a mid-2016 market introduction.[89][90] Introductions of the model in more markets started in 2016. In March 2016, the model was released in South Africa, where it is also produced. In Malaysia, it was launched in May 2016,[92] while in Pakistan it was launched in September 2016.[82] In September 2017, Toyota released the Hilux in Japan for the first time since 2004.",
+      "images": [
+         {
+            "imgSrc": "https://toyota.com.ua/assets/cache_image/uploads/fastUpload/camrynew_1600x900_766.jpg.webp"
+         },
+         {
+            "imgSrc": "https://www.ixbt.com/img/n1/news/2023/5/4/toyota-camry-2023-01_large.png"
+         },
+         {
+            "imgSrc": "https://focus.ua/static/storage/thumbs/920x465/4/8c/5c02ed06-61c6c8231fc04925aa9aa40e936838c4.jpg?v=1793_1"
+         }
+      ]
    },
    {
       "id": "5",
@@ -62,7 +108,18 @@
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "6-speed TC-SST (2007–2015). 5-speed automatic (2002, 2006–2007). 5-speed manual (1992–2016 (final edition))6-speed manual (2003–2008)",
       "engine": "Petrol mild hybrid: 2.0 L M 254 I4 turbo3.0 L M 256 I6 turbo. Petrol plug-in hybrid: 2.0 L M 254 I4 turbo",
-      "discription": "The Mitsubishi Lancer Evolution, popularly referred to as the 'Evo', is a sports sedan and rally car based on the Lancer that was manufactured by Japanese manufacturer Mitsubishi Motors from 1992 until 2016. There have been ten official versions to date, and the designation of each model is most commonly a Roman numeral. All generations use two-litre intercooled turbo inline four-cylinder engines and all-wheel drive systems.The Lancer was originally intended only for Japanese markets, but demand on  market led the Evolution series to be offered through Ralliart dealer networks in the United Kingdom and in various European markets from around 1998. Mitsubishi decided to export the eighth generation Evolution to the United States in 2003 after witnessing the success Subaru had in that market the previous year with the Subaru Impreza WRX."
+      "discription": "The Mitsubishi Lancer Evolution, popularly referred to as the 'Evo', is a sports sedan and rally car based on the Lancer that was manufactured by Japanese manufacturer Mitsubishi Motors from 1992 until 2016. There have been ten official versions to date, and the designation of each model is most commonly a Roman numeral. All generations use two-litre intercooled turbo inline four-cylinder engines and all-wheel drive systems.The Lancer was originally intended only for Japanese markets, but demand on  market led the Evolution series to be offered through Ralliart dealer networks in the United Kingdom and in various European markets from around 1998. Mitsubishi decided to export the eighth generation Evolution to the United States in 2003 after witnessing the success Subaru had in that market the previous year with the Subaru Impreza WRX.",
+      "images": [
+         {
+            "imgSrc": "https://avtomancar.com/wp-content/uploads/2020/07/mitsubishi-2020-2021-a.jpg"
+         },
+         {
+            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Mitsubishi_Lancer_EVO_X.jpg/1200px-Mitsubishi_Lancer_EVO_X.jpg"
+         },
+         {
+            "imgSrc": "https://cdn.motor1.com/images/mgl/1ZZ33w/s1/mitsubishi-asx-2023.webp"
+         }
+      ]
    },
    {
       "id": "6",
@@ -75,6 +132,17 @@
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "6-speed TC-SST (2007–2015). 5-speed automatic (2002, 2006–2007). 5-speed manual (1992–2016 (final edition))6-speed manual (2003–2008)",
       "engine": "Gasoline:3.2 L VR6 3.6 L VR6 4.5 L V8 (S) 4.5 L TT V8 (Turbo/Turbo S) 4.8 L V8 (S/GTS) 4.8 L TT V8 (Turbo/Turbo S)",
-      "discription": "The Porsche Cayenne is a series of mid-size luxury crossovers manufactured by the German motor company Porsche since 2002. The first generation was known internally within Porsche as the Type 9PA (955/957) or E1. It was the first V8-engined vehicle built by Porsche since 1995, when the Porsche 928 was discontinued. It is also Porsche's first off-road variant vehicle since its Super and Junior tractors of the 1950s, and the first Porsche with four doors. Since 2014, the Cayenne has been sold alongside a smaller Porsche SUV, the Macan. The word Cayenne used by Porsche comes from the cayenne peppers, a moderately hot chili pepper used to flavor dishes.The second-generation Cayenne (Type 92A or E2) was unveiled at the 2010 Geneva Motor Show in March. The Cayenne shares its platform, body frame, doors and electronics with the similar Volkswagen Touareg and Audi Q7. It received a facelift in 2014 with minor external changes, and introduced a new plug-in E-Hybrid version, with its public launch at the Paris Motor Show.[3] Since 2008, all engines have featured direct injection technology. The third generation (Type PO536) was unveiled in 2017 at Stuttgart."
+      "discription": "The Porsche Cayenne is a series of mid-size luxury crossovers manufactured by the German motor company Porsche since 2002. The first generation was known internally within Porsche as the Type 9PA (955/957) or E1. It was the first V8-engined vehicle built by Porsche since 1995, when the Porsche 928 was discontinued. It is also Porsche's first off-road variant vehicle since its Super and Junior tractors of the 1950s, and the first Porsche with four doors. Since 2014, the Cayenne has been sold alongside a smaller Porsche SUV, the Macan. The word Cayenne used by Porsche comes from the cayenne peppers, a moderately hot chili pepper used to flavor dishes.The second-generation Cayenne (Type 92A or E2) was unveiled at the 2010 Geneva Motor Show in March. The Cayenne shares its platform, body frame, doors and electronics with the similar Volkswagen Touareg and Audi Q7. It received a facelift in 2014 with minor external changes, and introduced a new plug-in E-Hybrid version, with its public launch at the Paris Motor Show.[3] Since 2008, all engines have featured direct injection technology. The third generation (Type PO536) was unveiled in 2017 at Stuttgart.",
+      "images": [
+         {
+            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Porsche_Taycan_at_IAA_2019_IMG_0786.jpg/800px-Porsche_Taycan_at_IAA_2019_IMG_0786.jpg"
+         },
+         {
+            "imgSrc": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Porsche/911/10990/1690869580714/front-left-side-47.jpg"
+         },
+         {
+            "imgSrc": "https://www.autocentre.ua/wp-content/uploads/2022/10/porsche-pokazal-eshhe-odin-911-v-chem-osobennost-carrera-t-1.jpg"
+         }
+      ]
    }
 ]

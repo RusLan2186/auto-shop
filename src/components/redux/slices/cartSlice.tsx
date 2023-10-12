@@ -13,11 +13,19 @@ export type ItemsType = {
   year: string;
 }
 
+
+export type imagesType = {
+  imgSrc: string;
+
+}
+
 export type FullAutoType = {
   id: number;
   brand: string;
   price: string;
   imageUrl: string;
+  // imageOne: string;
+  // imageTwo: string;
   year: string;
   numberPrice: number;
   raiting: number;
@@ -25,6 +33,7 @@ export type FullAutoType = {
   motor: string;
   transmission: string;
   engine: string;
+  images: imagesType[];
 }
 
 

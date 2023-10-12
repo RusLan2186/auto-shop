@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import axios from 'axios'
-import { AutoType } from '../Auto'
 import Loader from '../../loader/Loader'
 import cl from './FullAuto.module.scss'
-import Counter from '../../counter/Counter'
 import { useAppDispatch } from '../../redux/store'
 import { FullAutoType, addFullCar } from '../../redux/slices/cartSlice'
+import Collection from './Collection'
 
 
 
@@ -75,9 +74,11 @@ const FullAuto: React.FC = () => {
 
 
             </div>
-            <div className={cl.photos}>
-              <img className={cl.image} src={fullAuto.imageUrl} alt="" />
+
+            <div className={cl.collection}>
+              <Collection images={fullAuto.images} imageStart={fullAuto.imageUrl} />
             </div>
+
           </div>
           <h3 className={cl.discription}>{fullAuto.discription}</h3>
         </div>}
