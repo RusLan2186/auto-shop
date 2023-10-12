@@ -165,33 +165,52 @@ marquee {
 .link {
    display: block;
    width: 60%;
-}
-.imageCar {
-   width: 100%;
-
    @media (max-width: 900px) {
-      width: 40%;
+      width: 80%;
    }
    @media (max-width: 710px) {
       width: 100%;
    }
 }
-.brand {
+.imageCar {
+   width: 100%;
+
+   @media (max-width: 900px) {
+      width: 100%;
+   }
+   @media (max-width: 710px) {
+      width: 100%;
+   }
+}
+.brand__price {
    font-size: rem(35);
+   display: flex;
+   column-gap: 20px;
+   border: 1px solid orange;
+   border-radius: 15px;
+   padding: 10px 25px;
+   justify-content: space-between;
+
    span {
       color: orange;
    }
+   @media (max-width: 1250px) {
+      font-size: rem(25);
+   }
    @media (max-width: 900px) {
       margin-bottom: rem(30);
-      font-size: rem(30);
    }
-   @media (max-width: 550px) {
-      font-size: rem(25);
+   @media (max-width: 370px) {
+      padding: 10px;
+      font-size: rem(20);
    }
 }
 .price {
    color: orange;
    font-weight: 700;
+   @media (max-width: 991.98px) {
+      font-size: rem(22);
+   }
 
    @media (max-width: 450px) {
       font-size: rem(25);

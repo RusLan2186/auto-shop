@@ -32,9 +32,11 @@ const CartItem: React.FC<CartItemProps> = ({ auto }) => {
       <div className={cl.cartItem}>
         <Link className={cl.link} to={`/fullauto/${auto.id}`}>   <img className={cl.imageCar} src={auto.imageUrl} alt='auto' /></Link>
         <div className={cl.autoDiscription}>
-          <p className={cl.brand}>
-            Brand: <span>{auto.brand}</span>
-          </p>
+          <div className={cl.brand__price}>
+            <p>  Brand: <span>{auto.brand}</span></p>
+            <p>  Year: <span>{auto.year}</span></p>
+            <p>  Price: <span>{auto.price}$</span></p>
+          </div>
           <div className={cl.discriptionItems}>
             <div className={cl.discrptionItem}>
               <div className={cl.counterButtons}>

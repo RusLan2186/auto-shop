@@ -66,11 +66,12 @@ const FullAuto: React.FC = () => {
           <div className={cl.wrapper}>
             <div className={cl.info}>
 
-              <h1 className={cl.brand}>Brand: <span>{fullAuto.brand}</span></h1>
-              <h2 className={cl.year}>Year:<span> {fullAuto.year}</span></h2>
-              <h2 className={cl.price}>Price:<span> {fullAuto.price}$</span></h2>
-              <h2 className={cl.price}>Motor:<span> {fullAuto.motor}</span></h2>
-              <h2 className={cl.price}>Transmission:<span> {fullAuto.transmission}</span></h2>
+              <h1 className={cl.infoDiscription}>Brand: <span>{fullAuto.brand}</span></h1>
+              <h2 className={cl.infoDiscription}>Year:<span> {fullAuto.year}</span></h2>
+              <h2 className={cl.infoDiscription}>Price:<span> {fullAuto.price}$</span></h2>
+              <h2 className={cl.infoDiscription}>Engine:<span> {fullAuto.engine}$</span></h2>
+              <h2 className={cl.infoDiscription}>Motor:<span> {fullAuto.motor}</span></h2>
+              <h2 className={cl.infoDiscription}>Transmission:<span> {fullAuto.transmission}</span></h2>
 
 
             </div>

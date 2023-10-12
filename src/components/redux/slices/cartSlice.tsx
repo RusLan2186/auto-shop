@@ -24,6 +24,7 @@ export type FullAutoType = {
   discription: string;
   motor: string;
   transmission: string;
+  engine: string;
 }
 
 
