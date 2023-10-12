@@ -351,6 +351,7 @@ label {
   display: flex;
   align-items: center;
   gap: rem(20);
+  position: relative;
   @media (max-width: 991.98px) {
     column-gap: adaptive(10, 200);
   }
@@ -409,10 +410,7 @@ label {
     width: 65%;
     padding-bottom: 40%;
   }
-  // @media (max-width: 767.98px) {
-  //   width: 100%;
-  //   padding-bottom: 60%;
-  // }
+
   @media (max-width: 550px) {
     width: 100%;
     padding-bottom: 60%;
@@ -429,6 +427,29 @@ label {
   &:hover {
     transform: scale(1.1);
     transition: 0.3s all ease 0s;
+  }
+}
+
+.link {
+  color: white;
+  font-size: 25px;
+  transition: 0.3s all ease;
+  margin-top: 35px;
+  font-style: italic;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 70px;
+    background: url(../components/img/snape.png) no-repeat;
+    width: 60%;
+    height: 50px;
+    background-position: cover;
+  }
+  &:hover {
+    color: orange;
+    transition: 0.3s all ease;
   }
 }
 

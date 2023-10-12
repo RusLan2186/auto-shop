@@ -3,6 +3,7 @@ import Counter from '../counter/Counter';
 import { addCar } from '../redux/slices/cartSlice';
 import { AutoType } from './Auto';
 import { useAppDispatch } from '../redux/store';
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,6 +29,7 @@ const AutoItem: React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
         <div className='auto__actions'>
           <UiButton onClick={sendToCart}>Buy</UiButton>
           <Counter />
+          <Link className="link" to={`/fullauto/${id}`}>Details </Link>
         </div>
       </div>
     </div>
