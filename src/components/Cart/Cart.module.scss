@@ -88,7 +88,6 @@ marquee {
 .cartItemWContainer {
    max-width: rem(1500);
    margin: 0 auto;
-   padding: 0 rem(15);
 }
 
 .cartItem {
@@ -182,7 +181,7 @@ marquee {
       width: 100%;
    }
 }
-.brand__price {
+.brand__price__year {
    font-size: rem(35);
    display: flex;
    column-gap: 20px;
@@ -200,9 +199,10 @@ marquee {
    @media (max-width: 900px) {
       margin-bottom: rem(30);
    }
-   @media (max-width: 370px) {
+   @media (max-width: 450px) {
       padding: 10px;
       font-size: rem(20);
+      column-gap: 10px;
    }
 }
 .price {
