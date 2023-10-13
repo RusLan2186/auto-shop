@@ -2,6 +2,7 @@ import React from 'react'
 import cl from './FullAuto.module.scss'
 import { imagesType } from '../../redux/slices/cartSlice';
 import MyModal from '../../modal/MyModal';
+import next from '../../img/next.png';
 
 
 
@@ -56,9 +57,9 @@ const Collection: React.FC<CollectionProps> = ({ images, imageStart }) => {
                {images.map((image: imagesType, i: number) => (<div className={cl.imageModalWrapper} key={i} >
                   {i === current && (
                      <div >
-                        <button className={cl.btnPrev} onClick={prevSlide}>Prev</button>
+                        <img src={next} className={cl.btnPrev} onClick={nextSlide} />
                         <img className={cl.imageModal} src={image.imgSrc} />
-                        <button className={cl.btnNext} onClick={nextSlide}>Next</button>
+                        <img src={next} className={cl.btnNext} onClick={nextSlide} />
                      </div>)}
                </div>))}
 
