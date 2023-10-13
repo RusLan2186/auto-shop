@@ -6,6 +6,7 @@ import cl from './FullAuto.module.scss'
 import { useAppDispatch } from '../../redux/store'
 import { FullAutoType, addFullCar } from '../../redux/slices/cartSlice'
 import Collection from './Collection'
+import cart from '../../cart/image/cart.png';
 
 
 
@@ -57,8 +58,8 @@ const FullAuto: React.FC = () => {
         }
       </div>
       <div className={cl.btnWrapper}>
-        <button className={cl.btn} onClick={() => navigate('/')}>Back</button>
-        <button onClick={sendToCart} className={cl.btnBuy}>Add to cart</button>
+        <button className={cl.btn} onClick={() => navigate('/')}><span>Back</span></button>
+        <button onClick={sendToCart} className={cl.btnBuy}><span>Add to cart</span> <img className={cl.cartIcon} src={cart} alt="" /></button>
       </div>
       {fullAuto &&
         <div>
