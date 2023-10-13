@@ -8,14 +8,14 @@ import cart from '../cart/image/cart.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
-const Header:React.FC = () => {
+const Header: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [regModal, setRegModal] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
   const [openBurger, setOpenBurger] = useState<boolean>(false);
   const [cartAutosQuality, setCartAutosQuality] = useState<number>(0);
 
-  const cartAutos = useSelector((store:RootState) => store.cart.items);
+  const cartAutos = useSelector((store: RootState) => store.cart.items);
 
   useEffect(() => {
     setCartAutosQuality(cartAutos.length);
@@ -38,38 +38,44 @@ const Header:React.FC = () => {
             </strong>
           </NavLink>
         </div>
-        <nav className={!openBurger ? 'header__menu' : 'header__menu open-menu'}>
-          <img
-            className='header-image'
-            onClick={() => setOpenModal(!openModal)}
-            src={enterSite}
-            alt='enter'
-          />
-          <span onClick={() => setRegModal(!regModal)} className='header__link'>
-            Registration
-          </span>
-          <a className='header__link header__link_tel' href='tel:+3 050- 555 -66 -77'>
-            +3 050- 555 -66 -77
-          </a>
-          <NavLink onClick={() => setOpenBurger(!openBurger)} to='cart' className='cart'>
+        <div className='heafer__menu_items'>
+          <nav className={!openBurger ? 'header__menu' : 'header__menu open-menu'}>
+            <img
+              className='header-image'
+              onClick={() => setOpenModal(!openModal)}
+              src={enterSite}
+              alt='enter'
+            />
+            <span onClick={() => setRegModal(!regModal)} className='header__link'>
+              Registration
+            </span>
+            <a className='header__link header__link_tel' href='tel:+3 050- 555 -66 -77'>
+              +3 050- 555 -66 -77
+            </a>
+            {/* <NavLink onClick={() => setOpenBurger(!openBurger)} to='cart' className='cart'>
+              <img className='header-image header-image-cart' src={cart} alt='cart' />
+              <p className='header__link'>{cartAutosQuality}</p>
+            </NavLink> */}
+          </nav>
+          <NavLink to='cart' className='cart'>
             <img className='header-image header-image-cart' src={cart} alt='cart' />
             <p className='header__link'>{cartAutosQuality}</p>
           </NavLink>
-        </nav>
-        <div
-          onClick={() => setOpenBurger(!openBurger)}
-          className={!openBurger ? 'header__burger' : ' header__burger open-menu'}
-        >
-          <span></span>
+          <div
+            onClick={() => setOpenBurger(!openBurger)}
+            className={!openBurger ? 'header__burger' : ' header__burger open-menu'}
+          >
+            <span></span>
+          </div>
         </div>
       </div>
 
       <HeaderModal visible={openModal} changeVisible={setOpenModal}>
-        <FormHeader openModal={openModal}  />
+        <FormHeader openModal={openModal} />
       </HeaderModal>
 
       <HeaderModal visible={regModal} changeVisible={setRegModal}>
-        <RegistationForm regModal={regModal}  />
+        <RegistationForm regModal={regModal} />
       </HeaderModal>
     </div>
   );

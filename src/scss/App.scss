@@ -150,6 +150,7 @@ label {
   font-weight: 700;
   letter-spacing: 0.5;
   text-transform: capitalize;
+  margin-top: rem(-15);
   span {
     color: orange;
     position: relative;
@@ -163,6 +164,11 @@ label {
   @media (min-width: 1920.98px) {
     font-size: rem(45);
   }
+}
+.heafer__menu_items {
+  display: flex;
+  align-items: center;
+  column-gap: rem(25);
 }
 
 .header__menu {
