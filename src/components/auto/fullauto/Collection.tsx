@@ -3,6 +3,8 @@ import cl from './FullAuto.module.scss'
 import { imagesType } from '../../redux/slices/cartSlice';
 import MyModal from '../../modal/MyModal';
 
+
+
 interface CollectionProps {
    images: imagesType[];
    imageStart: string;
@@ -25,7 +27,7 @@ const Collection: React.FC<CollectionProps> = ({ images, imageStart }) => {
          <div className={cl.photo}>
             <img onClick={() => setModal(true)} className={cl.image} src={activeImage} alt="auto" />
             <MyModal visible={modal} changeVisible={setModal}>
-               <img className={cl.imageModal} src={activeImage} alt="auto" />
+               <div className={cl.imageModalWrapper}>  <img className={cl.imageModal} src={activeImage} alt="auto" /></div>
             </MyModal>
          </div>
 

@@ -31,12 +31,13 @@ $maxWidthContainer: 1500;
    background-color: rgb(2, 2, 2);
    border-radius: rem(16);
    min-width: rem(250);
+
    display: flex;
    justify-content: center;
    align-items: center;
    transform: scale(0.5);
    transition: 0.4s;
-   position: relative;
+
    border: rem(3) solid orange;
    z-index: 110;
 
