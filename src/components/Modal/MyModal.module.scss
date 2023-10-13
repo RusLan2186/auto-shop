@@ -39,6 +39,7 @@ $maxWidthContainer: 1500;
    position: relative;
    border: rem(3) solid orange;
    z-index: 110;
+
    &.active {
       transform: scale(1);
    }
@@ -52,11 +53,11 @@ $maxWidthContainer: 1500;
    text-decoration: line-through;
    color: orange;
 }
-.modalError {
+.modalClose {
    color: orange;
    position: absolute;
-   top: rem(-50);
-   right: rem(-10);
+   top: rem(-40);
+   right: rem(-25);
    font-size: rem(35);
    cursor: pointer;
    transition: 0.3s all ease 0s;

@@ -1,14 +1,14 @@
 
 import cl from './MyModal.module.scss';
 
-interface MyModalProps{
-   visible:boolean;
-   children:React.ReactChild | React.ReactNode;
-   changeVisible:(visible:boolean) =>void;
+interface MyModalProps {
+   visible: boolean;
+   children: React.ReactChild | React.ReactNode;
+   changeVisible: (visible: boolean) => void;
 }
 
 
-const MyModal:React.FC<MyModalProps> = ({ children, visible, changeVisible }) => {
+const MyModal: React.FC<MyModalProps> = ({ children, visible, changeVisible }) => {
 
 
    const rootClasses = [cl.myModal]
@@ -31,7 +31,7 @@ const MyModal:React.FC<MyModalProps> = ({ children, visible, changeVisible }) =>
          <div className={rootClassesContent.join(' ')} onClick={(e) => e.stopPropagation()}>
 
             {children}
-            <div onClick={closeForm} className={cl.modalError}>X</div>
+            <div onClick={closeForm} className={cl.modalClose}>X</div>
          </div>
       </div>
    )

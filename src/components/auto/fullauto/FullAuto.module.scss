@@ -148,6 +148,7 @@
    top: 0;
    left: 0;
    object-fit: cover;
+   cursor: pointer;
 }
 .smallImagesWrapper {
    display: flex;
@@ -172,4 +173,9 @@
       transform: scale(1.1);
       transition: 0.3s all ease 0s;
    }
+}
+.imageModal {
+   max-width: 1200px;
+   max-height: 800px;
+   transform: scale(1.03);
 }

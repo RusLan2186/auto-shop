@@ -2,13 +2,13 @@
 
 import cl from '../modal/MyModal.module.scss'
 
-interface HeaderModalProps{
-   visible:boolean;
-   children:React.ReactChild | React.ReactNode;
-   changeVisible:(visible:boolean) =>void;
+interface HeaderModalProps {
+   visible: boolean;
+   children: React.ReactChild | React.ReactNode;
+   changeVisible: (visible: boolean) => void;
 }
 
-const HeaderModal:React.FC<HeaderModalProps> = ({ children, visible, changeVisible }) => {
+const HeaderModal: React.FC<HeaderModalProps> = ({ children, visible, changeVisible }) => {
 
    const rootClasses = [cl.myModal]
    if (visible) {
@@ -24,9 +24,8 @@ const HeaderModal:React.FC<HeaderModalProps> = ({ children, visible, changeVisib
    return (
       <div className={rootClasses.join(' ')} onClick={() => changeVisible(false)} >
          <div className={rootClassesContent.join(' ')} onClick={(e) => e.stopPropagation()}>
-
             {children}
-            <div onClick={() => changeVisible(false)} className={cl.modalError}>X</div>
+            <div onClick={() => changeVisible(false)} className={cl.modalClose}>X</div>
          </div>
       </div>
    )

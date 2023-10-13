@@ -52,10 +52,7 @@ const Header: React.FC = () => {
             <a className='header__link header__link_tel' href='tel:+3 050- 555 -66 -77'>
               +3 050- 555 -66 -77
             </a>
-            {/* <NavLink onClick={() => setOpenBurger(!openBurger)} to='cart' className='cart'>
-              <img className='header-image header-image-cart' src={cart} alt='cart' />
-              <p className='header__link'>{cartAutosQuality}</p>
-            </NavLink> */}
+
           </nav>
           <NavLink to='cart' className='cart'>
             <img className='header-image header-image-cart' src={cart} alt='cart' />
