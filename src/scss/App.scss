@@ -292,8 +292,12 @@ label {
   align-items: center;
   column-gap: adaptive(50, 120);
   row-gap: rem(30);
+  margin-bottom: rem(30);
   @media (max-width: 991.98px) {
     grid-template-columns: 1fr;
+  }
+  @media (max-width: 550px) {
+    margin-bottom: 0;
   }
 }
 
@@ -350,6 +354,31 @@ label {
 .search-result {
   grid-row-start: 0;
   grid-row-end: 3;
+}
+.pagination {
+  display: flex;
+  gap: rem(15);
+  justify-content: flex-end;
+}
+.pagination__number,
+.pagination__number_active {
+  cursor: pointer;
+  font-size: rem(20);
+  font-weight: 700;
+  border: rem(1) solid orange;
+  padding: rem(10);
+  border-radius: rem(5);
+  transition: 0.5s all ease 0s;
+}
+.pagination__number:hover {
+  background-color: orange;
+  transition: 0.3s all ease 0s;
+}
+
+.pagination__number_active {
+  color: white;
+  background-color: orange;
+  transition: 0.5s all ease 0s;
 }
 
 // AUTOITEM

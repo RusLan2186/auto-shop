@@ -9,17 +9,20 @@ import { Link } from 'react-router-dom';
 
 
 
-interface AutoListProps{
-autos:AutoType[];
-changeAutos:(autos:AutoType[]) =>void;
+interface AutoListProps {
+  autos: AutoType[];
+  changeAutos: (autos: AutoType[]) => void;
+  page: number;
+  setPage: (page: number) => void;
 }
 
-const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
+const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }) => {
   const [autoSorted, setAutoSorted] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const sortAndSearchAuto = useCars(autos, autoSorted, searchQuery);
   const [searchResultsQuery, setSearchResultsQuery] = useState<string>('');
   const [clearSearch, setClearSearch] = useState<boolean>(false);
+  // const [page, setPage] = useState(1)
 
 
 
@@ -44,7 +47,7 @@ const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
           </span>
           <UiInput
             value={searchQuery}
-            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
             placeholder='Search....'
           ></UiInput>
         </div>
@@ -54,13 +57,17 @@ const AutoList:React.FC<AutoListProps> = ({ autos, changeAutos }) => {
 
       {sortAndSearchAuto.length !== 0 ? (
         <div className='auto__list'>
-          {sortAndSearchAuto.map((auto:AutoType) => (
-          <Link  key={auto.id} to={`/fullauto/${auto.id}`}> <AutoItem {...auto} /></Link>
+          {sortAndSearchAuto.map((auto: AutoType) => (
+            <Link key={auto.id} to={`/fullauto/${auto.id}`}> <AutoItem {...auto} /></Link>
           ))}
         </div>
       ) : (
         <h2 className='title'>{found}</h2>
       )}
+
+      <ul className='pagination'>
+        {[...Array(2)].map((_, i) => (<li onClick={(() => setPage(i + 1))} className={page === i + 1 ? 'pagination__number_active' : 'pagination__number'}>{i + 1}</li>))}
+      </ul>
     </div>
   );
 };

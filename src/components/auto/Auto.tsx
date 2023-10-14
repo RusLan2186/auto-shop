@@ -11,33 +11,34 @@ import { RootState, useAppDispatch } from '../redux/store';
 
 
 export type AutoType = {
-  id:number;
-  brand:string;
-  price:string ;
-  imageUrl:string;
-  year:string;
-  numberPrice:number;
-  raiting:number;
-  }
-
-  
+  id: number;
+  brand: string;
+  price: string;
+  imageUrl: string;
+  year: string;
+  numberPrice: number;
+  raiting: number;
+}
 
 
 
-const Auto:React.FC = () => {
+
+
+const Auto: React.FC = () => {
   const [autos, setAutos] = useState<AutoType[]>();
   const [autosLoading, setAutosLoading] = useState(true);
   const [loadError, setLoadError] = useState<string>('');
   const dispatch = useAppDispatch();
-  const activeCathegorie = useSelector((state:RootState) => state.filters.categiriesId);
+  const activeCathegorie = useSelector((state: RootState) => state.filters.categiriesId);
+  const [page, setPage] = useState(1)
+
+  const category = activeCathegorie > 0 ? `category=${activeCathegorie}` : '';
 
   useEffect(() => {
     setAutosLoading(true);
     axios
       .get<AutoType[]>(
-        `https://64cbc2282eafdcdc85194590.mockapi.io/autos?${
-          activeCathegorie > 0 ? `category=${activeCathegorie}` : ''
-        }`,
+        `https://64cbc2282eafdcdc85194590.mockapi.io/autos?page=${page}&limit=6&${category}`,
       )
       .then((res) => {
         setAutos(res.data);
@@ -48,7 +49,7 @@ const Auto:React.FC = () => {
         setLoadError(e.message);
         setAutosLoading(false);
       });
-  }, [activeCathegorie]);
+  }, [activeCathegorie, page]);
 
 
 
@@ -58,20 +59,20 @@ const Auto:React.FC = () => {
       <h1 className='title'>Choose your dream</h1>
       <Categories
         activeCategorie={activeCathegorie}
-        onClickCategorie={(id:number) => dispatch(setCotegoryId(id))}
+        onClickCategorie={(id: number) => dispatch(setCotegoryId(id))}
       />
 
       {loadError && <strong className='error__load'>An error has occurred ${loadError}!!!</strong>}
 
-      {!autos  ? (
+      {!autos ? (
         <div className='loader__block'>
-          {!loadError &&  <Loader />}
-        
+          {!loadError && <Loader />}
+
         </div>
       ) : (
         <div>
-   
-          <AutoList  autos={autos} changeAutos={setAutos} />
+
+          <AutoList autos={autos} changeAutos={setAutos} page={page} setPage={setPage} />
         </div>
       )}
     </div>
