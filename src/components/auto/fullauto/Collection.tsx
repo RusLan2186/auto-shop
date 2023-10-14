@@ -52,7 +52,7 @@ const Collection: React.FC<CollectionProps> = ({ images, imageStart }) => {
 
                {images.map((image: imagesType, i: number) => (
                   // <div className={cl.imageModalWrapper} key={i} >
-                  <div className={cl.imageModalWrapper} key={i} >
+                  <div className={i === current ? cl.imageModalWrapperActive : cl.imageModalWrapper} key={i} >
                      {i === current && (
                         <>
                            <img src={next} className={cl.btnPrev} onClick={prevSlide} />
