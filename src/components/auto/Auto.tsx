@@ -67,14 +67,13 @@ const Auto: React.FC = () => {
       {!autos ? (
         <div className='loader__block'>
           {!loadError && <Loader />}
-
         </div>
       ) : (
         <div>
-
           <AutoList autos={autos} changeAutos={setAutos} page={page} setPage={setPage} />
         </div>
       )}
+
     </div>
   );
 };

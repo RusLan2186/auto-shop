@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 interface AutoListProps {
   autos: AutoType[];
   changeAutos: (autos: AutoType[]) => void;
@@ -22,7 +23,7 @@ const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }
   const sortAndSearchAuto = useCars(autos, autoSorted, searchQuery);
   const [searchResultsQuery, setSearchResultsQuery] = useState<string>('');
   const [clearSearch, setClearSearch] = useState<boolean>(false);
-  // const [page, setPage] = useState(1)
+
 
 
 
@@ -63,6 +64,7 @@ const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }
         </div>
       ) : (
         <h2 className='title'>{found}</h2>
+
       )}
 
       <ul className='pagination'>

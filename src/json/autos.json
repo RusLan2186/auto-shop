@@ -1,31 +1,5 @@
 [
    {
-      "id": "3",
-      "brand": "Audi",
-      "year": "2012",
-      "price": "500000",
-      "imageUrl": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg",
-      "imageOne": "https://i.infocar.ua/i/12/6035/1400x936.jpg",
-      "imageTwo": "https://cdn3.riastatic.com/photosnew/auto/photo/audi__511077747fx.jpg",
-      "category": "2, 3, 5",
-      "raiting": 2,
-      "motor": "Electric motor 3-phase synchronous electric motor",
-      "transmission": "Manual transmission. Automatic transmission",
-      "engine": "Inline-four petrol engine. V6 petrol engine. Inline-four diesel engine V6 diesel engine",
-      "discription": "The Audi A4 is a line of luxury compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage, with the initial A4 designated as the B5-series, followed by the B6, B7, B8, and the B9.",
-      "images": [
-         {
-            "imgSrc": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg"
-         },
-         {
-            "imgSrc": "https://i.infocar.ua/i/12/6035/1400x936.jpg"
-         },
-         {
-            "imgSrc": "https://focus.ua/static/storage/thumbs/1200x630/8/a6/bf37018d-478de0b2a164bb9387975024b2feda68.jpg?v=4237_1"
-         }
-      ]
-   },
-   {
       "id": "1",
       "brand": "Bmw",
       "year": "2020",
@@ -74,12 +48,38 @@
       ]
    },
    {
+      "id": "3",
+      "brand": "Audi",
+      "year": "2012",
+      "price": "500000",
+      "imageUrl": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg",
+      "imageOne": "https://i.infocar.ua/i/12/6035/1400x936.jpg",
+      "imageTwo": "https://cdn3.riastatic.com/photosnew/auto/photo/audi__511077747fx.jpg",
+      "category": "2, 3, 5",
+      "raiting": 2,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "Manual transmission. Automatic transmission",
+      "engine": "Inline-four petrol engine. V6 petrol engine. Inline-four diesel engine V6 diesel engine",
+      "discription": "The Audi A4 is a line of luxury compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage, with the initial A4 designated as the B5-series, followed by the B6, B7, B8, and the B9.",
+      "images": [
+         {
+            "imgSrc": "https://cf-cdn-v5.audi.at/media/ThreeColTeaser_TextImage_Image_Component/18493-paragraphs-117383-80725-image/dh-925-bc764f/18145ab0/1675150796/rs-q8-main.jpg"
+         },
+         {
+            "imgSrc": "https://i.infocar.ua/i/12/6035/1400x936.jpg"
+         },
+         {
+            "imgSrc": "https://focus.ua/static/storage/thumbs/1200x630/8/a6/bf37018d-478de0b2a164bb9387975024b2feda68.jpg?v=4237_1"
+         }
+      ]
+   },
+   {
       "id": "4",
       "brand": "Toyota",
       "year": "2005",
       "price": "18000",
       "imageUrl": "https://motor.ru/imgs/2023/03/27/07/5850601/b7834cb797d709635d14892ca09f97f395ea4137.jpg",
-      "category": "2, 3, 5, 6, 2",
+      "category": "2, 3, 5, 6",
       "raiting": 1,
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "5-speed R151 manual.6-speed RC60/RC61 manual / iMT manual.5-speed A750F automatic",
@@ -124,10 +124,10 @@
    {
       "id": "6",
       "brand": "Porshe",
-      "year": "2000",
-      "price": "30000",
+      "year": "2001",
+      "price": "70000",
       "imageUrl": "https://img.championat.com/c/1200x900/news/big/j/d/porshe-vnedrila-v-novejshuyu-911-yu-fishku-iz-f-1_16608943661644650323.jpg",
-      "category": "2, 3, 5, 4, 1",
+      "category": "2, 5, 4, 1",
       "raiting": 6,
       "motor": "48 V integrated starter-generator (mild hybrid).Permanent-magnet synchronous (plug-in hybrid)",
       "transmission": "6-speed TC-SST (2007–2015). 5-speed automatic (2002, 2006–2007). 5-speed manual (1992–2016 (final edition))6-speed manual (2003–2008)",
@@ -142,6 +142,150 @@
          },
          {
             "imgSrc": "https://www.autocentre.ua/wp-content/uploads/2022/10/porsche-pokazal-eshhe-odin-911-v-chem-osobennost-carrera-t-1.jpg"
+         }
+      ]
+   },
+   {
+      "id": "7",
+      "brand": "Lexus",
+      "year": "2020",
+      "price": "15000",
+      "imageUrl": "https://cdn.motor1.com/images/mgl/koY43Q/s1/lexus-rz-450e-front-corner.jpg",
+      "category": "1,2,3,4,5,6",
+      "raiting": 2,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "The Lexus LS (Japanese: レクサス・LS, Hepburn: Rekusasu LS) is a full-size luxury sedan (F-segment in Europe) serving as the flagship model of Lexus, the luxury division of Toyota. For the first four generations, all LS models featured V8 engines and were predominantly rear-wheel-drive. In the fourth generation, Lexus offered all-wheel-drive, hybrid, and long-wheelbase variants. The fifth generation changed to using a V6 engine with no V8 option, and only one length was offered.",
+      "images": [
+         {
+            "imgSrc": "https://i.infocar.ua/i/12/351/1400x936.jpg"
+         },
+         {
+            "imgSrc": "https://motor.ru/imgs/2021/06/26/08/4735888/a51c2899541c345f6975aa203280f610f2186ba2.jpeg"
+         },
+         {
+            "imgSrc": "https://kor.ill.in.ua/m/1260x900/2581584.jpg"
+         }
+      ]
+   },
+   {
+      "id": "8",
+      "brand": "Maybach",
+      "year": "2000",
+      "price": "700000",
+      "imageUrl": "https://ukrautoprom.com.ua/wp-content/uploads/2021/09/96e78e966c68c904078ff08cffb4243c826954ce.jpeg",
+      "category": "1, 4, 5, 6",
+      "raiting": 8,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "The Exelero was commissioned by Fulda, a German subsidiary of Goodyear, to test their new Carat Exelero tire range.[5] The Exelero was the second vehicle to serve as a one-off show car for Fulda's high performance tire range, the first being the Gemballa Extremo in 1996. In collaboration with Maybach, the initial design of the Exelero was to be influenced by the Maybach SW 38 and built on the platform of the Maybach",
+      "images": [
+         {
+            "imgSrc": "https://www.major-auto.ru/cars_images/1299675/2D/medium/1299675_1_3063013_14527127.JPG"
+         },
+         {
+            "imgSrc": "https://img.mercedes-benz-kiev.com/data/news/272-novyy-mercedes-maybach-s-class-dvigateli-i-tseny-v-ukraine/mercedes-maybach-s-580-4matic-1.jpg"
+         },
+         {
+            "imgSrc": "https://dreamcars.by/upload/iblock/843/8431fc6d28e0cd26e30a988e0b2ae0e2.jpg"
+         }
+      ]
+   },
+   {
+      "id": "9",
+      "brand": "Ferrari",
+      "year": "2023",
+      "price": "3000000",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Ferrari_488_GTB_IMG_4120.jpg/1200px-Ferrari_488_GTB_IMG_4120.jpg",
+      "category": "1, 4, 2, 3",
+      "raiting": 9,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "Ferrari partnered with Alcoa to produce an entirely new all-aluminium space-frame chassis that was 40% stiffer than its predecessor's which had utilized steel. The design was 28% lighter despite a 10% increase in overall dimensions. Along with a lightweight frame the new Pininfarina body styling deviated from traditions of the previous decade's sharp angles and flip-up headlights. The new V8 engine utilises a 3.6-litre capacity, a flat-plane crankshaft, and titanium connecting rods. The engine generates a power output of 400 PS (294 kW; 395 hp). According to Ferrari, weight was reduced by 60 kg (130 lb) and the 0 to 100 km/h (62 mph) acceleration time improved from 4.7 to 4.5 seconds.",
+      "images": [
+         {
+            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/2/28/2019_Ferrari_812_Superfast_S-A_6.5.jpg"
+         },
+         {
+            "imgSrc": "https://focus.ua/static/storage/thumbs/920x465/2/80/3ebf90d3-27e05f23a46caf434928666cb6151802.jpg?v=7334_1"
+         },
+         {
+            "imgSrc": "https://i0.wp.com/www.motorsportitalia.it/wp-content/uploads/2022/07/ferrari-1.jpg?fit=958%2C637&ssl=1"
+         }
+      ]
+   },
+   {
+      "id": "10",
+      "brand": "Nissan",
+      "year": "2019",
+      "price": "17000",
+      "imageUrl": "https://i.infocar.ua/i/12/6079/1400x936.jpg",
+      "category": "1, 2, 5, 3, 6",
+      "raiting": 10,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "The Nissan Skyline GT-R is a Japanese sports car based on the Nissan Skyline range. The first cars named  were produced between 1969 and 1972 under the model code KPGC10, and were successful in Japanese touring car racing events. This model was followed by a brief production run of second-generation cars, under model code KPGC110, in 1973.",
+      "images": [
+         {
+            "imgSrc": "https://motorcar.com.ua/wp-content/uploads/2021/08/2023-nissan-z.jpg"
+         },
+         {
+            "imgSrc": "https://nissan.autoportal.ua/img/testdrives/ap_test_juke21.jpg"
+         },
+         {
+            "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Nissan_Qashqai_%28J12%29_Automesse_Ludwigsburg_2022_1X7A5875.jpg"
+         }
+      ]
+   },
+   {
+      "id": "11",
+      "brand": "Skoda",
+      "year": "2010",
+      "price": "9000",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Skoda_Octavia_IV_liftback_%28cropped%29.jpg",
+      "category": "3, 4, 5, 6",
+      "raiting": 11,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "The Škoda Fabia is a series of passenger cars produced by Czech manufacturer Škoda Auto since 1999. It is the successor of the Škoda Felicia, which was discontinued in 2001. The Fabia was available in hatchback, estate (named Fabia Combi) and saloon (named Fabia Sedan) body styles at launch, and from 2007, the second generation was offered in hatchback and estate versions. The third generation Fabia was launched in 2015, and the fourth in 2021.",
+      "images": [
+         {
+            "imgSrc": "https://cdn.motor1.com/images/mgl/W812eg/s3/2022-skoda-fabia-monte-carlo.jpg"
+         },
+         {
+            "imgSrc": "https://www.autocentre.ua/wp-content/uploads/2023/07/2024-skoda-kamiq-facelift-teaser.jpg"
+         },
+         {
+            "imgSrc": "https://today.ua/wp-content/uploads/2022/10/skoda-enyaq-rs-iv-1.jpg"
+         }
+      ]
+   },
+   {
+      "id": "12",
+      "brand": "Renault",
+      "year": "2012",
+      "price": "4000",
+      "imageUrl": "https://bitstorage.ulf24.com:9112/b30e37dfc04726a4e6514a/1d31ef24217e843334e8e812fc8233d6f36440e90b4b4",
+      "category": "3, 4, 6",
+      "raiting": 12,
+      "motor": "Electric motor 3-phase synchronous electric motor",
+      "transmission": "6-speed automatic, 8-speed automatic",
+      "engine": "3.0 L I6 turbo (petrol)3.0 L I6 turbo (diesel), 3.0 L I6 Tri-turbo (diesel), 4.4 L V8 turbo (petrol)",
+      "discription": "The Renault Logan is a family of automobiles produced and marketed jointly by the French manufacturer Renault and its Romanian subsidiary Dacia since mid-2004, and was the successor to the Dacia 1310 and Dacia Solenza. It has been produced as a sedan, station wagon, and as a pick-up. It has been manufactured at Dacia's automobile plant in Mioveni, Romania, and at Renault (or its partners') plants in Morocco, Brazil, Argentina, Turkey, Russia, Colombia, Iran and India. The pick-up has also been produced at Nissan's plant in Rosslyn, South Africa.",
+      "images": [
+         {
+            "imgSrc": "https://i.infocar.ua/i/12/6033/1400x936.jpg"
+         },
+         {
+            "imgSrc": "https://focus.ua/static/storage/thumbs/920x465/f/f0/be4001dc-1a53e88ed94d5cb8c04f9bbe509e9f0f.jpg?v=8415_1"
+         },
+         {
+            "imgSrc": "https://avtocentr-goloseevsky.ukravto.ua/files/renault-talisman2.jpg"
          }
       ]
    }
