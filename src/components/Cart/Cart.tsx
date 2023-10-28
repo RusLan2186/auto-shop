@@ -14,6 +14,7 @@ const Cart = () => {
   const clickClearCart = () => {
     dispatch(clearCart());
   };
+  console.log(autos)
 
   return (
     <div className={cl.wrapper}>

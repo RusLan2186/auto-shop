@@ -17,9 +17,9 @@ const AutoItem: React.FC<AutoType> = ({ id, brand, year, price, imageUrl }) => {
   };
   return (
     <div className='auto__item'>
-      <a className='image__link' href='#'>
+      <Link  to={`/fullauto/${id}`} className='image__link' >
         <img className='auto__image' src={imageUrl} alt='auto' />
-      </a>
+      </Link>
       <div className='auto__description_items'>
         <div className='auto__discriptions'>
           <p> Brand: {brand}</p>

@@ -6,7 +6,8 @@ import { found } from './constAuto';
 import SortAuto from './SortAuto';
 import { AutoType } from './Auto';
 import { Link } from 'react-router-dom';
-
+//@ts-ignore
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -59,7 +60,10 @@ const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }
       {sortAndSearchAuto.length !== 0 ? (
         <div className='auto__list'>
           {sortAndSearchAuto.map((auto: AutoType) => (
-            <Link key={auto.id} to={`/fullauto/${auto.id}`}> <AutoItem {...auto} /></Link>
+           
+              <div key={auto.id}> 
+              <AutoItem {...auto} />
+              </div>
           ))}
         </div>
       ) : (
@@ -68,7 +72,7 @@ const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }
       )}
 
       <ul className='pagination'>
-        {[...Array(2)].map((_, i) => (<li onClick={(() => setPage(i + 1))} className={page === i + 1 ? 'pagination__number_active' : 'pagination__number'}>{i + 1}</li>))}
+        {[...Array(2)].map((_, i) => (<li key={uuidv4()} onClick={(() => setPage(i + 1))} className={page === i + 1 ? 'pagination__number_active' : 'pagination__number'}>{i + 1}</li>))}
       </ul>
     </div>
   );
