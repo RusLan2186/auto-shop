@@ -14,8 +14,10 @@ const Header: React.FC = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const [openBurger, setOpenBurger] = useState<boolean>(false);
   const [cartAutosQuality, setCartAutosQuality] = useState<number>(0);
+const cartAutos = useSelector((store: RootState) => store.cart.items);
+const isMounted = useRef(false)
+console.log(cartAutos);
 
-  const cartAutos = useSelector((store: RootState) => store.cart.items);
 
   useEffect(() => {
     setCartAutosQuality(cartAutos.length);
@@ -27,6 +29,16 @@ const Header: React.FC = () => {
   } else {
     bodyEl.classList.remove('lock');
   }
+
+  useEffect(() =>{
+
+    if(isMounted.current){
+      const json = JSON.stringify(cartAutos)
+      localStorage.setItem('cart',json)
+      }
+  isMounted.current = true;
+   
+  },[cartAutos])
 
   return (
     <div ref={divRef} className='header'>

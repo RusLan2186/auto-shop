@@ -40,6 +40,8 @@ const AutoList: React.FC<AutoListProps> = ({ autos, changeAutos, page, setPage }
     setSearchQuery('');
   };
 
+
+
   return (
     <div>
       <div className='search-sort__wrapper'>

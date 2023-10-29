@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AutoList from './AutoList';
-// import { audiCar, bmwCar, mercCar, ladaCar, toyotaCar, mitsubCar } from './carsImages'
 import Loader from '../loader/Loader';
 import Categories from './Categories';
 import { useSelector } from 'react-redux';
@@ -31,8 +30,8 @@ const Auto: React.FC = () => {
   const dispatch = useAppDispatch();
   const activeCathegorie = useSelector((state: RootState) => state.filters.categiriesId);
   const [page, setPage] = useState(1)
+const category = activeCathegorie > 0 ? `category=${activeCathegorie}` : '';
 
-  const category = activeCathegorie > 0 ? `category=${activeCathegorie}` : '';
 
   useEffect(() => {
     setAutosLoading(true);
@@ -50,7 +49,6 @@ const Auto: React.FC = () => {
         setAutosLoading(false);
       });
   }, [activeCathegorie, page]);
-
 
 
 
