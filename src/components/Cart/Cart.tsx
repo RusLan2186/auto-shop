@@ -1,4 +1,5 @@
 import {  useSelector } from 'react-redux';
+import React, { useRef } from 'react';
 import smile from './image/smile.png';
 import cl from './Cart.module.scss';
 import {  clearCart } from '../redux/slices/cartSlice';
@@ -10,11 +11,22 @@ const Cart = () => {
   const autos = useSelector((store:RootState) => store.cart.items);
   const totalPrice = useSelector((store:RootState) => store.cart.totalPrice);
   const dispatch = useAppDispatch();
+  const isMounted = useRef(false)
 
   const clickClearCart = () => {
     dispatch(clearCart());
   };
-  console.log(autos)
+
+  React.useEffect(() =>{
+
+    if(isMounted.current){
+      const json = JSON.stringify(autos)
+      localStorage.setItem('cart',json)
+      // console.log(window.localStorage.getItem('cart'));
+      }
+  isMounted.current = true;
+   
+  },[autos])
 
   return (
     <div className={cl.wrapper}>
