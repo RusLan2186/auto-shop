@@ -1,5 +1,5 @@
 import PostsItem from './PostsItem';
-import { useState, useMemo } from 'react';
+import { useState, useMemo,useRef, useEffect } from 'react';
 //@ts-ignore
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import UiInput from '../auto/UI/Input/UiInput';
@@ -33,6 +33,32 @@ export type AddPostType = Pick <PostsList, 'title' | "body">
   const [error, setError] = useState<string>('');
   const [titleError, setTitleError] = useState<string>('');
   const [bodyError, setBodyError] = useState<string>('');
+const isPostMounted = useRef(false)
+
+  useEffect(() =>{
+
+    if(isPostMounted.current){
+      const json = JSON.stringify(posts)
+      localStorage.setItem('post',json)
+     }
+  isPostMounted.current = true;
+   
+  },[posts])
+
+   const getPostFromLS = () =>{
+    const data = localStorage.getItem('post');
+    const items:PostsList[] = data ? JSON.parse(data) : []
+    
+    return{
+       items,
+      } 
+ }
+const {items} = getPostFromLS()
+
+useEffect(() =>{
+  setPosts(items)
+
+},[])
 
 
   const deleteUser = (user:PostsList) => {

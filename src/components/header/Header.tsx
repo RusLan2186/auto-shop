@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const [cartAutosQuality, setCartAutosQuality] = useState<number>(0);
 const cartAutos = useSelector((store: RootState) => store.cart.items);
 const isMounted = useRef(false)
-console.log(cartAutos);
+
 
 
   useEffect(() => {
